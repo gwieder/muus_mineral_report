@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Critical Minerals Intelligence — MUUS & Company</title>
+<title>Critical Minerals Intelligence — MUUS &amp; Company</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,7 +12,6 @@
   --blue-light: #e6f1fb; --blue-mid: #0c447c;
   --amber-light: #faeeda; --amber-dark: #633806;
   --red-light: #faece7; --red-mid: #993c1d;
-  --sage-light: #eaf3de; --sage-dark: #3b6d11;
   --purple-light: #f0eafa; --purple-mid: #5a2d82;
   --text-primary: #1a1a18; --text-secondary: #5a5a56; --text-muted: #8a8a84;
   --bg: #ffffff; --bg-secondary: #f7f6f2; --border: rgba(0,0,0,0.08); --border-strong: rgba(0,0,0,0.14);
@@ -26,26 +25,45 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: #f0efe9; c
 .tag { display: inline-block; background: var(--green-light); color: var(--green-mid); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
 .sources { font-size: 11px; color: var(--text-muted); text-align: right; line-height: 1.7; font-family: 'DM Mono', monospace; }
 .sl { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin: 2rem 0 0.75rem; font-family: 'DM Mono', monospace; }
-.exec { background: var(--bg-secondary); border-left: 3px solid var(--green); padding: 1.1rem 1.25rem; border-radius: 0 10px 10px 0; font-size: 13.5px; line-height: 1.85; color: var(--text-primary); }
+.sl-sub { font-size: 11px; color: var(--text-muted); font-weight: 400; text-transform: none; letter-spacing: 0; margin-left: 8px; font-family: 'DM Sans', sans-serif; }
+.exec { background: var(--bg-secondary); border-left: 3px solid var(--green); padding: 1.15rem 1.3rem; border-radius: 0 10px 10px 0; font-size: 13.5px; line-height: 1.9; color: var(--text-primary); }
+.exec p { margin-bottom: 0.7rem; } .exec p:last-child { margin-bottom: 0; }
+.exec strong { font-weight: 500; color: var(--green-dark); }
 .divider { height: 1px; background: var(--border); margin: 2rem 0; }
-.banner { background: #fffbeb; border: 1px solid #f0c040; border-radius: 8px; padding: 0.6rem 1rem; font-size: 11.5px; color: #7a5c00; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
+.banner { background: #fffbeb; border: 1px solid #f0c040; border-radius: 8px; padding: 0.6rem 1rem; font-size: 11.5px; color: #7a5c00; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
 
-/* METRIC CARDS */
+/* CHANGE LOG */
+.chg { display: grid; grid-template-columns: 104px 1fr; gap: 16px; padding: 0.95rem 0; border-top: 1px solid var(--border); }
+.chg:first-of-type { border-top: none; }
+.chg-topic { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--green-dark); font-weight: 500; line-height: 1.4; }
+.chg-move { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.chg-body { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+.chg-body strong { color: var(--text-primary); font-weight: 500; }
+.chg-meta { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.chip { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; background: var(--bg); border: 1px solid var(--border-strong); color: var(--text-secondary); }
+.chip-nc { background: var(--blue-light); color: var(--blue-mid); border-color: transparent; }
+.chip-ae { background: var(--purple-light); color: var(--purple-mid); border-color: transparent; }
+.signal { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
+.signal-risk { background: var(--red-light); color: var(--red-mid); }
+.signal-opp { background: var(--green-light); color: var(--green-dark); }
+.signal-watch { background: var(--amber-light); color: var(--amber-dark); }
+.signal-cat { background: #efe6fb; color: var(--purple-mid); }
+.ping { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--purple-mid); display: inline-flex; align-items: center; gap: 4px; }
+.ping::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple-mid); display: inline-block; }
+
+/* METRIC CARDS + TABLE */
 .mg { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 1.5rem; }
 .mc { background: var(--bg-secondary); border-radius: 10px; padding: 0.875rem 1rem; }
 .mc-l { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 3px; }
-.mc-v { font-size: 20px; font-weight: 400; color: var(--text-primary); letter-spacing: -0.5px; }
-.mc-v span { font-size: 13px; }
-.mc-s { font-size: 11px; margin-top: 3px; }
+.mc-v { font-size: 19px; font-weight: 400; color: var(--text-primary); letter-spacing: -0.5px; }
+.mc-v span { font-size: 12px; }
+.mc-s { font-size: 11px; margin-top: 4px; line-height: 1.45; }
 .up { color: var(--up); } .dn { color: var(--down); } .nt { color: var(--text-muted); }
-
-/* TABLES */
 .tw { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.5rem; padding: 0 0.5rem; }
 table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 th { text-align: left; padding: 8px 10px; font-size: 10px; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border-strong); font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
 td { padding: 10px 10px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-primary); }
 tr:last-child td { border-bottom: none; }
-tr:hover td { background: #fafaf8; }
 .mn { font-weight: 500; font-size: 13px; }
 .ms { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-top: 1px; }
 .badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 500; }
@@ -59,277 +77,293 @@ tr:hover td { background: #fafaf8; }
 .cw { position: relative; width: 100%; height: 240px; min-height: 240px; display: block; margin: 0.75rem 0 0.5rem; }
 .leg { display: flex; flex-wrap: wrap; gap: 16px; font-size: 11px; color: var(--text-muted); margin-bottom: 0.5rem; font-family: 'DM Mono', monospace; }
 .leg span { display: flex; align-items: center; gap: 6px; }
-.tk { background: var(--bg-secondary); border-radius: 10px; padding: 0.875rem 1.1rem; font-size: 13px; color: var(--text-primary); line-height: 1.7; margin: 0.75rem 0 0; }
-.tk strong { color: var(--green); font-weight: 500; }
+.tk { background: var(--bg-secondary); border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin: 0.75rem 0 0; }
+.tk strong { color: var(--text-primary); font-weight: 500; }
 
-/* REGIONAL TABLE */
-.region-label { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; display: inline-block; white-space: nowrap; }
-.reg-na { background: var(--blue-light); color: var(--blue-mid); }
-.reg-latam { background: var(--green-light); color: var(--green-dark); }
-.reg-africa { background: var(--amber-light); color: var(--amber-dark); }
-.reg-europe { background: var(--purple-light); color: var(--purple-mid); }
-.reg-china { background: var(--red-light); color: var(--red-mid); }
-.reg-apac { background: #e8f4f8; color: #0c5d7a; }
-.reg-oceania { background: var(--sage-light); color: var(--sage-dark); }
-.reg-cis { background: #f4f0e8; color: #5a4a20; }
-.dep-high { color: var(--down); font-weight: 500; }
-.dep-med { color: #ba7517; font-weight: 500; }
-.dep-low { color: var(--up); font-weight: 500; }
-.reg-note { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
-.reg-news { font-size: 11px; color: var(--text-secondary); line-height: 1.5; font-style: italic; border-top: 1px solid var(--border); margin-top: 4px; padding-top: 4px; }
+/* COMPANY IMPACT — PROSE */
+.company { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1.35rem 1.5rem; margin-bottom: 16px; }
+.co-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; margin-bottom: 1rem; }
+.co-name { font-size: 17px; font-weight: 500; color: var(--text-primary); }
+.co-desc { font-size: 11.5px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.co-sub { font-size: 10.5px; font-weight: 500; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); margin: 1rem 0 0.45rem; }
+.co-p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.7rem; }
+.co-p:last-child { margin-bottom: 0; }
+.co-p strong { color: var(--text-primary); font-weight: 500; }
+.caveat { font-size: 12px; color: var(--amber-dark); background: var(--amber-light); border-radius: 6px; padding: 0.55rem 0.8rem; line-height: 1.65; margin-top: 0.6rem; }
+.caveat strong { font-weight: 500; }
+.wl { margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+.wl-row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 5px 0; font-size: 12px; }
+.wl-k { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 3px; }
+.wl-v { color: var(--text-secondary); line-height: 1.7; }
+.wl-v .pill { display: inline-block; background: var(--bg-secondary); border-radius: 4px; padding: 2px 7px; margin: 0 4px 4px 0; font-size: 11px; color: var(--text-primary); }
+.wl-note { font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 8px; }
 
 /* NEWS CARDS */
 .ng { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
 .nc { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1rem 1.1rem; }
-.nc-src { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-bottom: 6px; font-family: 'DM Mono', monospace; }
+.nc.cat { border-color: #c9b3e8; background: #faf7fe; }
+.nc-src { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-bottom: 6px; font-family: 'DM Mono', monospace; gap: 8px; }
 .nc-t { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px; line-height: 1.45; }
-.nc-b { font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 8px; }
-.nc-analysis { font-size: 12px; color: var(--text-primary); line-height: 1.65; background: var(--bg-secondary); border-radius: 6px; padding: 0.5rem 0.75rem; margin-bottom: 8px; }
+.nc-b { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
+.nc-analysis { font-size: 12px; color: var(--text-primary); line-height: 1.7; background: var(--bg-secondary); border-radius: 6px; padding: 0.55rem 0.75rem; }
 .nc-analysis strong { color: var(--green); font-weight: 500; }
-.nc-tags { display: flex; gap: 4px; flex-wrap: wrap; }
 .ntag { font-size: 10px; padding: 2px 7px; border-radius: 3px; }
-.ntag-price { background: var(--green-light); color: var(--green-dark); }
 .ntag-policy { background: var(--blue-light); color: var(--blue-mid); }
 .ntag-metal { background: var(--amber-light); color: var(--amber-dark); }
 .ntag-risk { background: var(--red-light); color: var(--red-mid); }
 
-/* ANALYSIS SECTION */
-.analysis-block { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 12px; }
-.analysis-title { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-.analysis-body { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
-.analysis-body p { margin-bottom: 0.6rem; }
-.analysis-body p:last-child { margin-bottom: 0; }
-.signal { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
-.signal-risk { background: var(--red-light); color: var(--red-mid); }
-.signal-opp { background: var(--green-light); color: var(--green-dark); }
-.signal-watch { background: var(--amber-light); color: var(--amber-dark); }
+/* REGIONAL (DEMOTED) */
+.region-label { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; display: inline-block; white-space: nowrap; }
+.reg-na { background: var(--blue-light); color: var(--blue-mid); }
+.reg-china { background: var(--red-light); color: var(--red-mid); }
+.dep-high { color: var(--down); font-weight: 500; }
+.dep-low { color: var(--up); font-weight: 500; }
+.reg-note { font-size: 11px; color: var(--text-secondary); line-height: 1.55; }
+.quiet { opacity: 0.9; }
 
 /* DISCLAIMER */
-.src { font-size: 10.5px; color: var(--text-muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.8; font-family: 'DM Mono', monospace; }
+.src { font-size: 10.5px; color: var(--text-muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.85; font-family: 'DM Mono', monospace; }
+.src strong { color: var(--text-secondary); font-weight: 500; }
 
-/* MOBILE */
 @media (max-width: 640px) {
   body { padding: 0 0 3rem; }
   .report { border-radius: 0; padding: 1.25rem 1rem 2rem; box-shadow: none; }
   .report-header { flex-direction: column; align-items: flex-start; }
   .report-title { font-size: 18px; }
   .sources { text-align: left; }
-  .mg { grid-template-columns: 1fr 1fr; }
+  .mg { grid-template-columns: 1fr; }
   .cw { height: 200px; min-height: 200px; }
   .ng { grid-template-columns: 1fr; }
+  .chg { grid-template-columns: 1fr; gap: 6px; }
+  .wl-row { grid-template-columns: 1fr; gap: 2px; }
+  .company { padding: 1.1rem 1.1rem; }
 }
 </style>
 </head>
 <body>
 <div class="report">
 
-  <div class="banner">⚠ <span><strong>Prototype — AI-compiled data.</strong> Price figures, production data, and news items are sourced from an AI web research pass (IEA, OECD, USGS, Reuters, Trading Economics) and may contain inaccuracies. The next version will connect each section to verified live data feeds.</span></div>
+  <div class="banner">⚠ <span><strong>Prototype (v4) — real data, illustrative assembly.</strong> Figures are drawn from public sources and dated where used (see Sources &amp; method at the end). They are point-in-time snapshots gathered for this prototype, not a live feed, and several carry real caveats called out in the text. Specialty pricing (lithium, black mass) will move to Fastmarkets or Bloomberg, and company analysis will be reconciled against the MUUS investment memos. Treat numbers as directionally accurate and verify before any decision.</span></div>
 
   <div class="report-header">
     <div>
       <div class="report-title">Critical Minerals &amp; Metals Intelligence</div>
-      <div class="report-meta"><span class="tag">Weekly</span><span class="tag">Battery Supply Chain</span><span class="tag">Climate Tech</span>&nbsp; Week of June 10, 2026 &nbsp;·&nbsp; MUUS &amp; Company</div>
+      <div class="report-meta"><span class="tag">Weekly</span><span class="tag">North America</span><span class="tag">Li · Ni · Cu</span>&nbsp; Week of June 22, 2026 &nbsp;·&nbsp; MUUS &amp; Company</div>
     </div>
-    <div class="sources">IEA · OECD · USGS · Trading Economics<br>Reuters · Mining.com · Credendo</div>
+    <div class="sources">Prices: Trading Economics, LME, COMEX<br>Company &amp; policy: public filings + press</div>
   </div>
 
-  <!-- EXECUTIVE SUMMARY -->
-  <p class="sl">Executive Summary</p>
+  <!-- ============ SO WHAT ============ -->
+  <p class="sl">So What? <span class="sl-sub">Executive summary + what changed since you last looked (vs. week of June 15)</span></p>
   <div class="exec">
-    Critical mineral markets are entering a period of acute structural tension. On the supply side, <strong>China's rare earth export control regime</strong> — expanded significantly in April and October 2025 and now covering the full processing stack — has created the most significant western supply chain disruption in a decade. The October 2025 measures were partially suspended until November 2026 following the Trump-Xi summit in Busan, but the underlying licensing architecture remains fully intact and can be reactivated at any time. On the demand side, the IEA's latest outlook projects <strong>copper demand up 30% by 2040, lithium up fivefold, and implied deficits of 30–40% for both by 2035</strong> against currently announced project pipelines. Prices are responding: copper hit $6.01/lb on April 14 (up 30.6% YoY), lithium has staged a 78% recovery from December lows, and NdPr oxide is up 29% since December. The strategic implication is clear: supply concentration risk is no longer theoretical. It is happening now, and the window to reposition portfolios toward domestic and allied-nation supply chains is narrowing.
+    <p>The metals complex cooled in June after a strong spring, and the move is more about the macro backdrop than about anything structural. Copper, lithium and nickel each peaked in early-to-mid May and have since pulled back: <strong>copper to around $6.05/lb, near a seven-week low; lithium off its mid-May high of roughly CNY 200,000/t to the CNY 152,000–169,000 range; and nickel from above $19,600/t to about $17,200/t, a two-month low.</strong> The shared driver is a firmer US dollar and a more hawkish Federal Reserve under new chair Kevin Warsh, plus profit-taking, rather than a change in the long-run supply-demand picture.</p>
+    <p>That distinction is the whole point for the portfolio. The structural theses underneath both Nth Cycle and Aepnus — domestic refining capacity, the lithium-refining buildout, and the policy push to onshore critical materials — are intact even as the spot tape softens. <strong>For a company weighing a raise, the read is that spring strength has cooled but the multi-year case has not broken: this looks like a cyclical breather, not a regime change.</strong> The near-term effect on Nth Cycle's metal-linked economics is a modest, cyclical trim; Aepnus is largely insulated because its driver is refining capacity, not metal prices.</p>
+    <p>Both named catalysts moved this quarter, and neither in the direction the headline framing implies. There is <strong>still no US black-mass export ban</strong> — a potential Nth Cycle tailwind that has not arrived and is not expected imminently. And <strong>Rio Tinto has slowed construction at Nemaska's Bécancour plant</strong>, which is a timing risk for Aepnus's pilot rather than the clean positive the project's existence might suggest. Both are detailed below.</p>
+  </div>
+
+  <p class="sl" style="margin-top:1.75rem;">Change Log <span class="sl-sub">the five items that moved the portfolio read</span></p>
+
+  <div class="chg">
+    <div><div class="chg-topic">Copper</div><div class="chg-move">$6.05/lb · ▼ from May</div></div>
+    <div class="chg-body">
+      Copper slipped to roughly <strong>$6.05/lb in the week of June 22</strong>, near a seven-week low, after touching $6.34 on June 19 and a record near $6.60 on June 2. The pullback is macro-driven (dollar, Fed) rather than demand destruction, and the structural deficit narrative into the 2030s — AI data centers and grid build-out — is unchanged. <strong>For Nth Cycle:</strong> the refined-copper share of output is worth marginally less week-on-week, but the multi-year tailwind holds.
+      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="signal signal-watch">Cooling, thesis intact</span></div>
+    </div>
+  </div>
+
+  <div class="chg">
+    <div><div class="chg-topic">Lithium</div><div class="chg-move">~CNY 152–169k/t · volatile</div></div>
+    <div class="chg-body">
+      The most volatile of the three. Carbonate in China ran to about <strong>CNY 200,000/t in mid-May — a two-and-a-half-year high, up more than 160% from the 2025 lows</strong> — then fell back to roughly CNY 152,000–169,000/t (~$22,000–24,000) in June as the market priced in possible supply restarts (CATL's Jianxiawo mine, plus Australia's Bald Hill and Finniss). Still far above the 2025 trough, which keeps the lithium-refining buildout economic. <strong>For both companies:</strong> the spike that lifted sentiment has cooled, but the level still supports new hydroxide capacity.
+      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="chip chip-ae">Aepnus</span><span class="signal signal-watch">Off the highs</span></div>
+    </div>
+  </div>
+
+  <div class="chg">
+    <div><div class="chg-topic">Nickel</div><div class="chg-move">~$17,200/t · 2-mo low</div></div>
+    <div class="chg-body">
+      Nickel fell to about <strong>$17,200/t by June 24, a two-month low</strong>, after a rally above $19,600 in early May. Indonesia's 2026 ore-quota cut (to 250–260Mt from 379Mt) put a floor under sentiment, but a structural surplus and the industry's shift toward LFP chemistries — which use no nickel — cap the upside. <strong>For Nth Cycle:</strong> refined-nickel economics are soft, and the LFP shift is a genuine medium-term demand question for the nickel/cobalt side of its book.
+      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="signal signal-risk">Soft + structural question</span></div>
+    </div>
+  </div>
+
+  <div class="chg">
+    <div><div class="chg-topic">Black-mass export ban</div><div class="chg-move">catalyst · not enacted</div></div>
+    <div class="chg-body">
+      Worth stating plainly: <strong>there is no US black-mass export ban, and most market participants do not expect one imminently.</strong> The US is still a net black-mass exporter; the real constraint is a shortage of domestic refining capacity, not feedstock. For context, the EU is restricting black-mass exports from late 2026 and China (≈75% of global black-mass processing) reopened imports in 2025 to pull feedstock in. This is a <strong>potential future tailwind for Nth Cycle</strong> — restricted exports would keep recycled feedstock onshore — but it is not live policy. Treat as a standing alert, not a base case.
+      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="signal signal-cat">Catalyst</span><span class="ping">ping if status changes</span></div>
+    </div>
+  </div>
+
+  <div class="chg">
+    <div><div class="chg-topic">Nemaska / Bécancour</div><div class="chg-move">catalyst · slowed</div></div>
+    <div class="chg-body">
+      The more consequential move this quarter. Rio Tinto took majority control of Nemaska (53.9%, via its Arcadium acquisition) and assumed management in February; on <strong>March 13 it announced it was slowing construction of the Bécancour lithium-hydroxide plant for an "optimization" period and temporarily cutting the contractor workforce</strong>, even though the plant is over 70% built. Rio reaffirmed its commitment and a $300M+ 2026 Quebec investment, but the slowdown introduces timeline risk. Because Nemaska is a named feedstock partner on Aepnus's co-located Bécancour pilot, <strong>this is a watch item for Aepnus's pilot cadence</strong>, not the positive the project's mere existence might imply.
+      <div class="chg-meta"><span class="chip chip-ae">Aepnus</span><span class="signal signal-cat">Catalyst</span><span class="ping">ping if status changes</span></div>
+    </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- MACRO SIGNALS -->
-  <p class="sl">Macro Signals — April 2026</p>
+  <!-- ============ PRICES ============ -->
+  <p class="sl">Macro Signals <span class="sl-sub">lithium · nickel · copper · spot snapshots, late June 2026</span></p>
   <div class="mg">
-    <div class="mc"><div class="mc-l">Copper (COMEX)</div><div class="mc-v">$6.28<span>/lb · $13.84/kg</span></div><div class="mc-s up">+30.8% YoY · Record $6.60 on Jun 2</div></div>
-    <div class="mc"><div class="mc-l">Lithium Carbonate (China)</div><div class="mc-v">CNY 165,750<span>/tonne</span></div><div class="mc-s up">+174% YoY · Pullback from Q1 highs</div></div>
-    <div class="mc"><div class="mc-l">Cobalt (LME)</div><div class="mc-v">$56,290<span>/tonne</span></div><div class="mc-s up">+67.5% YoY · Supply-constrained</div></div>
+    <div class="mc"><div class="mc-l">Copper (COMEX)</div><div class="mc-v">~$6.05<span>/lb</span></div><div class="mc-s dn">▼ from $6.34 (Jun 19) · near 7-wk low</div></div>
+    <div class="mc"><div class="mc-l">Lithium Carbonate (China)</div><div class="mc-v">~CNY 160k<span>/t (~$23k)</span></div><div class="mc-s nt">Volatile · off mid-May 2.5-yr high</div></div>
+    <div class="mc"><div class="mc-l">Nickel (LME)</div><div class="mc-v">~$17,200<span>/t</span></div><div class="mc-s dn">▼ 2-month low · surplus caps upside</div></div>
   </div>
 
-  <!-- PRICE SIGNALS TABLE -->
-  <p class="sl">Key Price Signals</p>
   <div class="tw">
   <table>
-    <thead><tr><th style="width:130px;">Metal</th><th>Conventional</th><th>Per kg (USD)</th><th>Trend</th><th>Signal</th><th>Key Driver</th></tr></thead>
+    <thead><tr><th style="width:118px;">Metal</th><th>Spot (late Jun)</th><th>Trend</th><th>Driver and portfolio read</th></tr></thead>
     <tbody>
-      <tr><td><div class="mn">Copper</div><div class="ms">Cu · COMEX</div></td><td>$6.28/lb</td><td>~$13.84/kg</td><td><span class="badge bu">+30.8% YoY</span></td><td><span class="dot db"></span>Bullish</td><td>AI data center + grid infrastructure demand; record $6.60 hit Jun 2; Jefferies projects 491k tonne annual deficit through 2030; pending US refined copper tariff decision June 30</td></tr>
-      <tr><td><div class="mn">Lithium</div><div class="ms">Li · Carbonate, China</div></td><td>CNY 165,750/tonne (~$22,800)</td><td>~$22.80/kg</td><td><span class="badge bu">+174% YoY</span></td><td><span class="dot db"></span>Bullish</td><td>+174% YoY despite 15% pullback in June as Australian mines restart (Bald Hill, Finniss); Zimbabwe imposing export ban on unprocessed lithium; surplus expected through 2029 before deficit 2030-2035</td></tr>
-      <tr><td><div class="mn">Cobalt</div><div class="ms">Co · LME</div></td><td>$56,290/tonne</td><td>~$56.29/kg</td><td><span class="badge bu">+67.5% YoY</span></td><td><span class="dot db"></span>Bullish</td><td>DRC supply disruptions; demand diversified across EVs, aerospace, defence, consumer electronics; cobalt sulphate prices declining week of June 4 as spot market softens</td></tr>
-      <tr><td><div class="mn">Nickel</div><div class="ms">Ni · LME</div></td><td>~$16,000/tonne</td><td>~$16/kg</td><td><span class="badge bn">Mixed</span></td><td><span class="dot dn2"></span>Neutral</td><td>Indonesia cut 2026 ore quota to 250-260Mt; PT Vale halted mining; oversupply overhang remains despite quota cuts</td></tr>
-      <tr><td><div class="mn">Gold</div><div class="ms">Au · COMEX</div></td><td>~$3,200/oz</td><td>~$102,900/kg</td><td><span class="badge bu">Strong rally</span></td><td><span class="dot db"></span>Bullish</td><td>Safe haven demand; US-Iran tensions; inflation hedging; central bank buying at record levels</td></tr>
-      <tr><td><div class="mn">Rare Earths (NdPr)</div><div class="ms">NdPr oxide · China</div></td><td>¥748,700/tonne</td><td>~$103/kg</td><td><span class="badge bd">Supply risk premium</span></td><td><span class="dot dr"></span>Risk</td><td>China export controls covering full REE stack; European prices now up to 6x Chinese prices (IEA); suspension of Oct measures expires Nov 2026</td></tr>
+      <tr><td><div class="mn">Copper</div><div class="ms">Cu · COMEX</div></td><td>~$6.05/lb</td><td><span class="badge bd">Pullback</span></td><td>Off the June 2 record (~$6.60) on dollar strength and a hawkish Fed; structural deficit (AI data centers, grid) intact into the 2030s. Lifts the value of Nth Cycle's refined-copper output over time; a cyclical trim near-term.</td></tr>
+      <tr><td><div class="mn">Lithium</div><div class="ms">Li · carbonate, China</div></td><td>~CNY 160k/t (~$23k)</td><td><span class="badge bn">Volatile</span></td><td>Ran to a 2.5-year high (~CNY 200k) mid-May, then pulled back on supply-restart speculation. Still well above 2025 lows, keeping lithium-hydroxide refining economic — the demand driver behind Aepnus and a value driver for Nth Cycle.</td></tr>
+      <tr><td><div class="mn">Nickel</div><div class="ms">Ni · LME</div></td><td>~$17,200/t</td><td><span class="badge bd">2-mo low</span></td><td>Indonesia (≈60% of supply) cut its 2026 ore quota ~34%, but a structural surplus and the LFP-over-NMC shift weigh on demand. Soft refined-nickel economics for Nth Cycle's Ni/Co line.</td></tr>
     </tbody>
   </table>
   </div>
 
-  <p class="sl" style="margin-top:1.5rem;">6-Month Price Trend (Indexed to 100)</p>
+  <p class="sl" style="margin-top:1.5rem;">6-Month Price Trend <span class="sl-sub">indexed to 100 · directional, anchored to the spot levels above</span></p>
   <div class="cw" id="chartWrap" style="position:relative;width:100%;height:240px;min-height:240px;display:block;">
-    <canvas id="priceChart" style="display:block;width:100%!important;height:240px!important;" role="img" aria-label="Indexed price trends for copper, lithium, cobalt and rare earths Oct 2025 to Apr 2026."></canvas>
+    <canvas id="priceChart" style="display:block;width:100%!important;height:240px!important;" role="img" aria-label="Indexed price trends for copper, lithium and nickel, Dec 2025 to Jun 2026, all peaking around May then pulling back."></canvas>
   </div>
   <div class="leg">
     <span><span style="width:20px;height:2px;background:#1d9e75;display:inline-block;"></span>Copper</span>
     <span><span style="width:20px;height:0;border-top:2px dashed #378add;display:inline-block;"></span>Lithium</span>
-    <span><span style="width:20px;height:0;border-top:2px dotted #ba7517;display:inline-block;"></span>Cobalt</span>
-    <span><span style="width:20px;height:0;border-top:2px dashed #d85a30;display:inline-block;"></span>NdPr Rare Earths</span>
+    <span><span style="width:20px;height:0;border-top:2px dotted #ba7517;display:inline-block;"></span>Nickel</span>
   </div>
-  <div class="tk"><strong>Key takeaway:</strong> Copper and lithium are the two metals with the most urgent structural supply gaps. Copper's 30% projected deficit by 2035 is compounded by declining ore grades and a 15.5-year average mine development timeline (WRI). Lithium's +78% price recovery from December lows signals markets are beginning to price in the structural reality the IEA flagged: a 40% supply deficit by 2035 against current project pipelines. Both represent compounding tailwinds for portfolio companies in battery processing and grid infrastructure.</div>
+  <div class="tk"><strong>Read:</strong> the same shape in all three lines — a spring rally peaking around May, then a June pullback — is the tell that this is a macro move, not three separate stories. The portfolio question is therefore not "why did each metal fall" but "is the structural case still intact under the cyclical noise," and for copper and lithium it is. (Lines are indexed and directional; exact spot levels are in the table.)</div>
 
   <div class="divider"></div>
 
-  <!-- REGIONAL SUPPLY & DEPENDENCY TABLE -->
-  <p class="sl">Regional Supply &amp; Dependency Map</p>
-  <p style="font-size:12px;color:var(--text-secondary);margin-bottom:1rem;line-height:1.6;">How much is produced and processed by region, key dependencies, new capacity coming online, and the regulatory signals that could shift supply balances. Source: IEA Global Critical Minerals Outlook 2025, OECD Export Restrictions Inventory 2026, USGS.</p>
+  <!-- ============ PER-COMPANY ============ -->
+  <p class="sl">Portfolio Company Impact <span class="sl-sub">how the macro and the catalysts translate to each company</span></p>
 
-  <div class="tw">
+  <!-- NTH CYCLE -->
+  <div class="company">
+    <div class="co-head">
+      <div class="co-name">Nth Cycle</div>
+      <div class="co-desc">Critical-mineral refiner · OYSTER electro-extraction · Burlington, MA</div>
+    </div>
+
+    <div class="co-sub">Where they stand</div>
+    <p class="co-p">Nth Cycle (co-founder and CEO Megan O'Connor) is a midstream critical-mineral refiner. Its OYSTER system uses modular electro-extraction to turn black mass, industrial scrap and primary feeds into intermediate and refined nickel, cobalt, copper and rare-earth products, and it generates its own refining reagents on-site from electricity rather than buying them in. The company cites roughly 70% lower capital intensity than a conventional refinery, deployment in under two years, and up to 75% less waste. The commercial anchor is a <strong>binding 10-year, ~$1.1 billion offtake signed with Trafigura in March 2026</strong>, under which Trafigura takes 2,000 tonnes a year of contained nickel in mixed hydroxide precipitate (MHP) and 1,500 tonnes a year of lithium carbonate, refined from 12,000 tonnes a year of black mass. Commercial operations began in Fairfield, Ohio in 2024; expansions in South Carolina (designated "Project SHIELD") and the Netherlands are targeted for 2028, the latter supported by a €7.5M Dutch National Growth Fund grant.</p>
+
+    <div class="co-sub">What moved this week</div>
+    <p class="co-p">Because the Trafigura contract is priced on the metals Nth Cycle produces, June's pullback in nickel and lithium trims the near-term value of that output: the same volumes are worth somewhat less than they were in May. The effect is real but modest and cyclical. Contained nickel near $17,200/t and lithium carbonate in the low-$20,000s/t are both far above the 2025 lows that once made refining economics marginal, and a 10-year term smooths short-term swings. The more durable point runs the other way: Nth Cycle's margins improve with metal-price strength against a relatively fixed feedstock cost, so the structural copper and lithium case is a tailwind for the business even while the spot tape cools.</p>
+
+    <div class="co-sub">Competitive context — and why it's favorable right now</div>
+    <p class="co-p">The competitive backdrop validates Nth Cycle's core design choice. <strong>Li-Cycle</strong> — the highest-profile name in North American battery recycling, which built a capital-intensive, centralized "hub-and-spoke" network — filed for bankruptcy in May 2025 after its $485M Rochester hub stalled on cost overruns and it could not meet the conditions to draw a $475M DOE loan; <strong>Glencore</strong> bought the assets out of bankruptcy for roughly $40M and folded them into Glencore Battery Recycling. That failure is close to a direct argument for Nth Cycle's modular, lower-capex model, which is designed to avoid exactly the scale-and-financing trap that sank Li-Cycle. The counterweight is <strong>Redwood Materials</strong>, which has stayed well-capitalized (over $2B raised privately) and walked away from its own DOE loan — a reminder that the strongest competitor in the category is thriving, not distressed. Nth Cycle sits between those poles: commercially validated by Trafigura, but still scaling toward its 2028 expansions, with execution risk that lives in construction and ramp rather than in technology or demand.</p>
+
+    <div class="co-sub">What to watch</div>
+    <p class="co-p">Three things. First, whether the metals pullback deepens or reverses; a sustained slide in nickel and lithium would pressure refined-output economics. Second, the LFP-versus-nickel chemistry shift, a slow but genuine demand question for the nickel/cobalt side of the book. Third, the black-mass export-ban discussion — not policy today, but a meaningful feedstock tailwind if it ever became policy, which is why it earns a standing alert.</p>
+
+    <div class="wl">
+      <div class="wl-row"><div class="wl-k">Customers</div><div class="wl-v"><span class="pill">Trafigura — 10-yr, $1.1B offtake</span></div></div>
+      <div class="wl-row"><div class="wl-k">Competitors</div><div class="wl-v"><span class="pill">Li-Cycle (bankrupt 2025 → Glencore)</span><span class="pill">Redwood Materials</span><span class="pill">Cirba Solutions</span><span class="pill">Ascend Elements</span></div></div>
+      <div class="wl-row"><div class="wl-k">Projects</div><div class="wl-v"><span class="pill">Fairfield, OH (operating)</span><span class="pill">South Carolina · Project SHIELD (2028)</span><span class="pill">Netherlands (2028)</span></div></div>
+      <div class="wl-row"><div class="wl-k">Policy</div><div class="wl-v"><span class="pill">US black-mass export rules</span><span class="pill">FEOC / NDAA recycled-material provisions</span></div></div>
+      <div class="wl-note">Competitor and customer lists are drawn from public sources and should be reconciled against the Nth Cycle investment memo once the NDA is in place.</div>
+    </div>
+  </div>
+
+  <!-- AEPNUS -->
+  <div class="company">
+    <div class="co-head">
+      <div class="co-name">Aepnus Technology</div>
+      <div class="co-desc">Salt-splitting electrolysis · reagent recycling · Oakland, CA</div>
+    </div>
+
+    <div class="co-sub">Where they stand</div>
+    <p class="co-p">Aepnus (co-founders Lukas Hackl, CEO, and Bilen Akuzum, CTO — chemists out of UC Berkeley and Lawrence Berkeley National Lab) makes a "salt-splitting" electrolyzer that converts sodium-sulfate waste back into caustic soda (sodium hydroxide) and sulfuric acid, the two commodity reagents the battery and refining industries consume in bulk. It is a chlorine-free alternative to the century-old chlor-alkali process, which the company says runs roughly 40–50% more energy-efficiently and without the iridium or other precious-metal catalysts rival electrolyzers require. Aepnus raised an $8M seed in 2024 led by Clean Energy Ventures, with <strong>Muus Climate Partners among the syndicate</strong>. It is pre-commercial: an Oakland testbed, a planned demonstration plant sized for 500+ tonnes a year of sodium sulfate, and a flagship ~2-tonne-a-year pilot in Bécancour, Quebec running on feedstock from Ultium CAM (GM × POSCO), Vale and Nemaska Lithium.</p>
+
+    <div class="co-sub">The opportunity, stated plainly</div>
+    <p class="co-p">Aepnus is best understood as a picks-and-shovels bet on the refining build-out rather than a bet on any metal's price, and the reason is mechanical. Sodium sulfate is an unavoidable byproduct of making lithium hydroxide, of cathode production and of battery recycling — an average battery-materials plant generates on the order of 50,000–100,000 tonnes of it a year, most of which currently goes to landfill. Every new refining or cathode line that comes online therefore enlarges the pool of waste Aepnus can address. <strong>That makes the right leading indicator for Aepnus the amount of refining capacity coming online in North America, not the spot price of lithium or nickel.</strong></p>
+    <p class="co-p">The size of the savings Aepnus can offer a given customer does depend on two prices, and this is the part worth being precise about: what that customer would otherwise pay to buy virgin caustic soda and sulfuric acid, and what it would pay to truck away and dispose of its sodium-sulfate waste. So the value proposition is strongest for customers far from the US chlor-alkali supply base (which is concentrated on the Gulf Coast) and carrying high disposal or freight costs — remote mines and inland refineries — and weakest where reagents are cheap and close by. One honest headwind today: US caustic-soda prices are soft (chlor-alkali oversupply pushed them down through 2025), which trims the reagent-substitution half of the savings. The disposal-avoidance and logistics half is unaffected, and for remote sites it is often the larger piece.</p>
+
+    <div class="co-sub">What moved this week</div>
+    <p class="co-p">The relevant development for Aepnus is not a price but the Nemaska/Bécancour slowdown. Nemaska is one of three named feedstock partners for Aepnus's Bécancour pilot, so Rio Tinto's decision to slow construction and reduce the contractor workforce there introduces some risk to the pilot's cadence. The diligence question worth running down: does the pilot's sodium-sulfate supply depend on Nemaska's plant being operational, or on its construction-phase and partner streams? Vale and Ultium CAM remain in place as the other two partners, which diversifies the feedstock risk.</p>
+    <div class="caveat"><strong>Caveat:</strong> Aepnus is private and pre-commercial, so its read-through is necessarily more inferential than Nth Cycle's. The Nemaska link is a real, named partnership, but the exact dependency of the pilot on Nemaska's plant status is not public — flagged here as a question to confirm, not an established risk.</div>
+
+    <div class="co-sub">Competitive context</div>
+    <p class="co-p">Aepnus's competition is less a set of named startups than the status quo it displaces: today, sodium sulfate is landfilled and reagents are bought virgin from incumbent chlor-alkali producers such as Olin, Westlake, Occidental and Dow. Direct analogs — companies doing on-site electrochemical regeneration of these specific reagents from sulfate waste — are few, which is both the opportunity (little direct competition, a genuinely novel category) and the risk (an unproven market, long industrial sales cycles, and adoption the founders themselves have said could be a decade from full scale). The investment question here is less "who wins this category" and more "does the category materialize on a fundable timeline."</p>
+
+    <div class="co-sub">What to watch</div>
+    <p class="co-p">First, North American refining and cathode capacity actually coming online — the demand driver. Second, the Bécancour pilot's progress and whether the Nemaska slowdown touches it. Third, caustic-soda and sulfuric-acid prices, which set the reagent-substitution savings and are currently soft. Fourth, and most important, any move from pilot toward the 500+ tonne-a-year demonstration plant, which is the real de-risking milestone for the technology.</p>
+
+    <div class="wl">
+      <div class="wl-row"><div class="wl-k">Partners</div><div class="wl-v"><span class="pill">Ultium CAM (GM × POSCO)</span><span class="pill">Vale</span><span class="pill">Nemaska Lithium (Rio Tinto)</span></div></div>
+      <div class="wl-row"><div class="wl-k">Displaces</div><div class="wl-v"><span class="pill">Olin</span><span class="pill">Westlake</span><span class="pill">Occidental</span><span class="pill">virgin chlor-alkali + landfill</span></div></div>
+      <div class="wl-row"><div class="wl-k">Co-investors</div><div class="wl-v"><span class="pill">Clean Energy Ventures</span><span class="pill">Lowercarbon Capital</span><span class="pill">Voyager Ventures</span></div></div>
+      <div class="wl-row"><div class="wl-k">Projects</div><div class="wl-v"><span class="pill">Oakland testbed</span><span class="pill">Bécancour pilot</span><span class="pill">500+ t/yr demo plant</span></div></div>
+      <div class="wl-note">From public sources; the competitor set in particular is thin in public data and should be confirmed against the Aepnus memo.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ============ REGULATORY / NEWS ============ -->
+  <p class="sl">Regulatory &amp; Supply Chain Developments <span class="sl-sub">US focus · catalysts flagged for alerts</span></p>
+  <div class="ng">
+    <div class="nc cat">
+      <div class="nc-src"><span>Rio Tinto · Mar 13, 2026</span><span class="ntag ntag-metal">Catalyst</span></div>
+      <div class="nc-t">Rio Tinto Slows Nemaska's Bécancour Hydroxide Plant for "Optimization"</div>
+      <div class="nc-b">After taking 53.9% majority control of Nemaska (via the Arcadium acquisition) and assuming management in February, Rio Tinto announced it would slow Bécancour construction through 2026 and temporarily reduce contractor headcount, despite the plant being over 70% built. It reaffirmed commitment and a $300M+ 2026 Quebec investment; commissioning was previously planned for 2026 with first production in 2028.</div>
+      <div class="nc-analysis"><strong>Why it matters:</strong> Nemaska is a named feedstock partner for Aepnus's co-located Bécancour pilot, so this is the quarter's most direct portfolio read-through — a timing risk to confirm, partly cushioned by Vale and Ultium CAM as alternate partners. <span class="ping">ping if status changes</span></div>
+    </div>
+
+    <div class="nc cat">
+      <div class="nc-src"><span>Policy · ongoing</span><span class="ntag ntag-risk">Catalyst</span></div>
+      <div class="nc-t">US Black-Mass Export Restrictions: Discussed, Not Enacted</div>
+      <div class="nc-b">The US still treats black mass as non-hazardous and remains a net exporter; market participants broadly do not expect a near-term ban. The EU is moving to restrict black-mass exports from late 2026, and China (≈75% of global black-mass processing) reopened imports in 2025 — so feedstock is being pulled toward Asia while US domestic refining capacity lags.</div>
+      <div class="nc-analysis"><strong>Why it matters:</strong> The single highest-leverage potential catalyst for Nth Cycle — a ban would keep recycled feedstock onshore — but it is not policy today and should be tracked, not assumed. <span class="ping">ping if status changes</span></div>
+    </div>
+
+    <div class="nc">
+      <div class="nc-src"><span>Industry · 2025–26</span><span class="ntag ntag-risk">Competition</span></div>
+      <div class="nc-t">Recycling Shakeout: Li-Cycle Bankrupt, Redwood Thriving</div>
+      <div class="nc-b">Li-Cycle's capital-intensive centralized hub model collapsed into bankruptcy in 2025 (Glencore bought the assets for ~$40M); Redwood Materials, by contrast, raised over $2B privately and declined its DOE loan. The category is bifurcating between distressed and well-funded players.</div>
+      <div class="nc-analysis"><strong>Why it matters:</strong> A real-world validation of Nth Cycle's modular, low-capex thesis — and a reminder that the strongest competitor (Redwood) is healthy, so the bet is on execution and capital discipline, not a clear field.</div>
+    </div>
+
+    <div class="nc">
+      <div class="nc-src"><span>US Policy · FY2026</span><span class="ntag ntag-policy">Near-shoring</span></div>
+      <div class="nc-t">NDAA and FEOC Rules Keep Tightening the Domestic Floor</div>
+      <div class="nc-b">The FY2026 NDAA expanded covered materials and added explicit recycled-material exceptions, while FEOC rules continue to steer sourcing away from Chinese supply chains. The policy direction consistently rewards domestic refining and recycling.</div>
+      <div class="nc-analysis"><strong>Why it matters:</strong> A slow-moving structural tailwind under both portfolio companies' core thesis — onshore processing of critical materials — independent of where spot prices sit this month.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ============ REGIONAL (DEMOTED) ============ -->
+  <p class="sl quiet">Regional Context <span class="sl-sub">US vs. China · updated quarterly · reference only</span></p>
+  <div class="tw quiet">
   <table>
-    <thead>
-      <tr>
-        <th style="width:120px;">Region</th>
-        <th style="width:160px;">Key Metals Produced</th>
-        <th style="width:100px;">Processing Dependency</th>
-        <th style="width:160px;">New Capacity Coming Online</th>
-        <th>Regulatory Signal</th>
-      </tr>
-    </thead>
+    <thead><tr><th style="width:118px;">Region</th><th>Position</th><th>Relevance to portfolio</th></tr></thead>
     <tbody>
       <tr>
-        <td><span class="region-label reg-na">North America</span></td>
-        <td><div class="reg-note">Copper (AZ, NM, BC), Gold, early-stage lithium (Nevada — Thacker Pass), REE (Mountain Pass, CA)</div></td>
-        <td><div class="dep-high">HIGH dependency</div><div class="reg-note">U.S. is 100% import-reliant for 12 critical minerals; relies on China for 40-90% of processing capacity for Li, Co, Cu</div></td>
-        <td><div class="reg-note">Thacker Pass lithium restart (Lithium Americas); MP Materials REE processing expansion (DOD-backed); Redwood Materials Nevada recycling at 100k+ tonnes/yr</div></td>
-        <td><div class="reg-note">Jan 2026 Trump EO on processed critical minerals directs Commerce to negotiate allied supply agreements; IRA mandates domestic sourcing for EV battery tax credits; DOE deploying ~$1B in critical minerals funding</div><div class="reg-news">Signal: Policy floor is being built. Domestic processing investment is accelerating but remains 3-5 years from meaningful scale.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-latam">Latin America</span></td>
-        <td><div class="reg-note">Lithium Triangle (Chile, Argentina, Bolivia — 50%+ of global Li reserves); Copper (Chile #1, Peru #2 globally); Iron ore (Brazil)</div></td>
-        <td><div class="dep-med">MED dependency</div><div class="reg-note">Strong mining base but most processing still sent to China. Albemarle scaling DLE technology in Chile with $1.3B commitment.</div></td>
-        <td><div class="reg-note">Albemarle DLE pilot achieving 90% recovery vs 50% conventional (commercial scale expected late 2026); Argentina opening new lithium brine projects; Brazil iron ore expansion</div></td>
-        <td><div class="reg-note">Chile reviewing national lithium strategy with greater state involvement; Argentina provinces competing for investment with favorable royalty terms; both countries seeking to move up value chain into processing</div><div class="reg-news">Signal: LATAM is the world's largest lithium reserve base but still largely an ore exporter. Whoever wins the processing race here changes global supply dynamics.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-africa">Africa (DRC + SA)</span></td>
-        <td><div class="reg-note">Cobalt (DRC — 76% of global supply); PGMs/Platinum (South Africa — dominant global producer); high-grade iron ore (Guinea); emerging lithium (Zimbabwe — fastest-growing producer 2024)</div></td>
-        <td><div class="dep-high">HIGH export risk</div><div class="reg-note">OECD 2026: ~70% of global cobalt exports subject to at least one export restriction. DRC regulatory crackdowns on artisanal mining ongoing.</div></td>
-        <td><div class="reg-note">Zimbabwe lithium production surging (new entrant 2024 per IEA); Guinea Simandou iron ore project (largest untapped reserve globally) moving toward production; DRC industrial mining investment increasing despite regulatory risk</div></td>
-        <td><div class="reg-note">DRC implementing stricter artisanal mining regulations following supply disruptions; South Africa PGM sector under pressure from weak prices and energy costs; OECD flags Africa + Asia as regions adding most new export restrictions in 2024</div><div class="reg-news">Signal: Africa's critical minerals are indispensable but increasingly restricted. Supply shock risk from DRC cobalt is among the highest of any single-source dependency globally.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-europe">Europe</span></td>
-        <td><div class="reg-note">Minimal primary production. Focus on recycling (Redwood-equivalent EU players), refining, and "green" lithium projects (Serbia — Jadar, suspended); PGM recycling strong</div></td>
-        <td><div class="dep-high">CRITICAL dependency</div><div class="reg-note">EU Critical Raw Materials Act mandates 10% domestic extraction, 40% domestic processing, 25% recycling by 2030 — currently far from all three targets</div></td>
-        <td><div class="reg-note">EU battery gigafactory buildout accelerating; Northvolt (Sweden) scaling; EU funding domestic rare earth processing to reduce China dependence; Serbia Jadar lithium project remains suspended after environmental opposition</div></td>
-        <td><div class="reg-note">EU CRMA (Critical Raw Materials Act) now in force; European REE prices running up to 6x Chinese prices following China export controls (IEA); Ford temporarily paused Explorer production in May 2025 over rare earth magnet shortage</div><div class="reg-news">Signal: Europe is most exposed to China's REE export controls of any Western bloc. The 6x price premium is a visible measure of that exposure right now.</div></td>
+        <td><span class="region-label reg-na">United States</span></td>
+        <td><div class="dep-high">Refining-capacity short</div><div class="reg-note">Abundant scrap and ore but limited domestic refining; a net black-mass exporter. Near-shoring policy and funding are building the floor but remain years from meaningful scale.</div></td>
+        <td><div class="reg-note">The exact gap both portfolio companies are built to fill — Nth Cycle in refining, Aepnus in reagent regeneration.</div></td>
       </tr>
       <tr>
         <td><span class="region-label reg-china">China</span></td>
-        <td><div class="reg-note">REE mining (60%+ of global); Graphite (78% of global production); Cobalt processing (65%+ of global refined cobalt); Lithium processing (50%+ of global); Nickel refining; dominant in nearly all mineral processing</div></td>
-        <td><div class="dep-high">CHOKEPOINT</div><div class="reg-note">IEA: China is leading refiner for 19 of 20 strategic minerals with average 70% market share. For REEs: ~92% of global processing. This is structural, not cyclical.</div></td>
-        <td><div class="reg-note">China continues expanding domestic processing capacity. CATL Jianxiawo mine suspension (lithium) is notable as a rare reduction in Chinese supply — suggests strategic price management rather than demand weakness</div></td>
-        <td><div class="reg-note">April 2025: Export controls on 7 heavy REEs. October 2025: Expanded to 12 REEs + full processing stack + magnet components — suspended until Nov 2026. Jan 2026: Catalogue expansion adds REE compounds. Apr 29 2026: MIIT draft framework tightens enforcement across mining, smelting, separation.</div><div class="reg-news">Signal: China's export control architecture is now permanent infrastructure. The Nov 2026 suspension expiry is the single most important date on the critical minerals calendar.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-apac">Asia-Pacific (ex-China)</span></td>
-        <td><div class="reg-note">Nickel (Indonesia — 60%+ of global production); Coal/Iron ore (India); emerging battery manufacturing (South Korea, Japan — CATL competitors); REE processing outside China (Lynas — Malaysia)</div></td>
-        <td><div class="dep-med">MED-HIGH</div><div class="reg-note">Indonesia dominates nickel smelting with 50%+ share. Japan and South Korea highly exposed to China REE controls for auto and electronics manufacturing.</div></td>
-        <td><div class="reg-note">Indonesia cut 2026 nickel ore quota to 250-260Mt (from 379Mt) — PT Vale halted mining; Japan investing in alternative REE supply chains; South Korea diversifying battery material sourcing through government agreements</div></td>
-        <td><div class="reg-note">China implemented ban on exports of dual-use items to Japan (effective Jan 2026); Indonesia quota cuts signal shift from volume to value strategy; India pushing domestic critical minerals extraction under new national policy</div><div class="reg-news">Signal: Japan is currently the most acutely impacted allied nation from China's export controls. Watch for Japan-Australia critical minerals agreements to accelerate.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-oceania">Oceania (Australia)</span></td>
-        <td><div class="reg-note">Lithium (world's largest producer — Pilbara spodumene); Iron ore (world's largest exporter); Gold; Nickel (BHP); REE mining expanding (Lynas — largest outside China)</div></td>
-        <td><div class="dep-low">LOW dependency</div><div class="reg-note">Strong mining base with growing allied-nation processing ambitions. Australia increasingly positioned as key alternative to Chinese mineral supply.</div></td>
-        <td><div class="reg-note">Lynas expanding REE processing in Australia and Malaysia; BHP investing in future-facing minerals; Albemarle (US) Australian lithium operations continuing; new REE mining projects in development per IEA diversification outlook</div></td>
-        <td><div class="reg-note">Australia-US critical minerals partnership deepening under IRA allied sourcing framework; Australia positioning as preferred alternative supply source for Japan, South Korea, and EU; AUKUS creating defense-linked minerals agreements</div><div class="reg-news">Signal: Australia is the clearest beneficiary of western supply chain diversification. Lynas is the most strategically important single company outside China in the REE supply chain.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-cis">Eurasia / CIS</span></td>
-        <td><div class="reg-note">Nickel (Russia — Norilsk, ~10% of global supply); Potash (Russia + Belarus — dominant globally); Uranium (Kazakhstan — ~43% of global production); Palladium (Russia — ~40% of global supply)</div></td>
-        <td><div class="dep-high">SANCTIONED RISK</div><div class="reg-note">Russian nickel and palladium supplies disrupted/rerouted since 2022 sanctions. Kazakhstan uranium flowing through alternative routes but exposure remains elevated.</div></td>
-        <td><div class="reg-note">Kazakhstan expanding uranium production (Kazatomprom — world's largest uranium producer); Russia Norilsk maintaining nickel output despite sanctions pressure; Central Asian countries (Uzbekistan, Kyrgyzstan) emerging as new mining destinations</div></td>
-        <td><div class="reg-note">Ongoing Western sanctions on Russia creating supply rerouting through China and Central Asian intermediaries; Kazakhstan navigating between Russia and Western buyers; OECD notes CIS countries adding new export restrictions in 2024</div><div class="reg-news">Signal: Russian palladium and nickel represent latent supply risk that markets have partially priced in. Any escalation in Ukraine creates renewed commodity shock potential.</div></td>
+        <td><div class="dep-low">Processing chokepoint</div><div class="reg-note">Refines &gt;85% of critical minerals and ≈75% of black mass; reopened black-mass imports in 2025 to pull in global feedstock.</div></td>
+        <td><div class="reg-note">The incumbent the domestic thesis is positioned against; the feedstock pull a US export ban would aim to counter.</div></td>
       </tr>
     </tbody>
   </table>
   </div>
 
-  <div class="divider"></div>
-
-  <!-- NEWS -->
-  <p class="sl">Top Regulatory &amp; Supply Chain Developments</p>
-  <div class="ng">
-    <div class="nc">
-      <div class="nc-src"><span>Mining.com · Jun 4, 2026</span><span class="ntag ntag-risk">Regulatory</span></div>
-      <div class="nc-t">Resource Nationalism Redraws Critical Minerals Playbook — Export Controls Now Standard Statecraft</div>
-      <div class="nc-b">Gibson Dunn analysis confirms resource nationalism has expanded beyond royalties and taxes across China, DRC, Vietnam, Indonesia, Chile and others — with export controls, production quotas, processing mandates and direct government intervention now standard tools. The shift is turning critical minerals from a traditional mining business into a geopolitical contest.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> Supply restriction is no longer a China-specific risk. It is the new baseline globally. Any supply chain not anchored in bilateral agreements or allied-nation frameworks is structurally exposed to this trend accelerating further.</div>
-      <div class="nc-tags"><span class="ntag ntag-risk">Global export controls</span><span class="ntag ntag-policy">Resource nationalism</span></div>
-    </div>
-    <div class="nc">
-      <div class="nc-src"><span>Discovery Alert · Jun 3, 2026</span><span class="ntag ntag-metal">Africa</span></div>
-      <div class="nc-t">Mozambique Signs Sweeping New Mining Law — State Equity Mandated, Export Rules Tightened</div>
-      <div class="nc-b">Mozambique's new mining legislation, signed June 3 by President Daniel Chapo, fundamentally rewrites resource governance for the first time in over a decade. The law mandates state equity participation and tightens export rules — arriving precisely as both the U.S. DFC and China's Shandong Yulong are seeking government approval for competing Mozambique mineral transactions.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> Mozambique is a critical graphite supplier and emerging battery minerals hub. This law concentrates enormous negotiating leverage in Maputo at exactly the moment Washington and Beijing are competing for access. A continent-wide precedent for sovereign resource control is being set.</div>
-      <div class="nc-tags"><span class="ntag ntag-risk">State equity mandate</span><span class="ntag ntag-metal">Graphite · Africa</span></div>
-    </div>
-    <div class="nc">
-      <div class="nc-src"><span>InvestorNews CMI · Jun 7, 2026</span><span class="ntag ntag-policy">China</span></div>
-      <div class="nc-t">China Appoints State Firm to Coordinate Global Mining Deals — CMRG Role Expanding Across Critical Minerals</div>
-      <div class="nc-b">China has picked a state firm (CMRG — originally established for iron ore) to coordinate mining deals abroad across strategic mineral supply chains. Previously, Chinese mining companies, provincial entities and SOEs competed against each other for overseas assets. The centralized approach gives Beijing a more disciplined and strategically coherent posture in global mineral acquisition.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> This is one of the most consequential critical minerals developments of 2026. A centrally coordinated Chinese approach to global mineral acquisition means western investors are no longer competing against individual Chinese companies — they are competing against a unified state strategy.</div>
-      <div class="nc-tags"><span class="ntag ntag-risk">CMRG expansion</span><span class="ntag ntag-policy">China state strategy</span></div>
-    </div>
-    <div class="nc">
-      <div class="nc-src"><span>U.S. State Dept · Feb 2026 / DOE · Jun 2, 2026</span><span class="ntag ntag-policy">U.S. Policy</span></div>
-      <div class="nc-t">FORGE Alliance Launched — 54 Countries, $10B Reserve Fund, and $67M REE Processing Plant</div>
-      <div class="nc-b">Secretary Rubio launched FORGE (replacing the Minerals Security Partnership) with 54 countries at the Critical Minerals Ministerial, signing 11 new bilateral MOUs including Argentina, Guinea, Peru, UAE and Uzbekistan. Separately, DOE awarded $67M to Colorado School of Mines and ElementUSA for a rare earth processing plant. USA Rare Earth selected South Carolina for new REE metal and magnet manufacturing.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> The U.S. is building the institutional infrastructure of a western critical minerals bloc at speed. FORGE + bilateral MOUs + domestic processing investment represents the most comprehensive allied supply chain buildout since the Minerals Security Partnership was established — and is being executed with considerably more urgency.</div>
-      <div class="nc-tags"><span class="ntag ntag-policy">FORGE · 54 nations</span><span class="ntag ntag-price">$10B Project Vault</span></div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- ANALYSIS -->
-  <p class="sl">Strategic Analysis</p>
-
-  <div class="analysis-block">
-    <div class="analysis-title"><span class="signal signal-risk">Supply Risk</span> The November 2026 Cliff — China's REE Suspension Expires in 5 Months</div>
-    <div class="analysis-body">
-      <p>The most important date in critical minerals for the next 12 months is November 2026, now just five months away, when China's suspension of its most expansive rare earth export controls expires. The Oct 2025 measures — suspended following the Trump-Xi Busan summit — covered not just REE elements but the full processing stack: magnets, components, separation equipment, and recycling technology. If reinstated, they would represent the most comprehensive restriction on western access to rare earth-derived products ever implemented.</p>
-      <p>Meanwhile China is not waiting. The June 3rd appointment of CMRG to coordinate global mineral acquisitions shows Beijing is actively consolidating its position while the suspension window is open. The April 2025 controls remain in full force regardless, and the January 2026 catalogue expansion already added REE compounds to the control list.</p>
-      <p>For investors: the window between now and November 2026 is the period of maximum optionality and minimum time. Companies building non-Chinese REE supply chains — Lynas (Australia/Malaysia), MP Materials (California), USA Rare Earth (new South Carolina facility announced June 2) — are operating in a brief window where their product commands its strongest strategic premium. The DOE's $67M award to Colorado School of Mines for a rare earth processing plant signals the U.S. government is racing to close the gap before November. Either scenario after that date — controls reinstated or extended via deal — favors holding rather than exiting allied-nation REE assets.</p>
-    </div>
-  </div>
-
-  <div class="analysis-block">
-    <div class="analysis-title"><span class="signal signal-opp">Opportunity</span> Processing Is the Value — and the Gap</div>
-    <div class="analysis-body">
-      <p>The January 2026 U.S. Executive Order made explicit what market participants already knew: ore extraction without processing sovereignty is strategically worthless. China controls 40-90% of processing capacity for lithium, cobalt, and copper despite producing only ~10% of their ore. This is the chokepoint that matters, and it is where western investment is most insufficient.</p>
-      <p>The IEA projects real investment growth of just 2% in 2024 after adjusting for inflation — well below what's needed. The gap between demand projections and current project pipelines is 30% for copper and 40% for lithium by 2035. These are not tail risks. They are base-case outcomes under current investment trajectories.</p>
-      <p>The opportunity is concentrated in a specific part of the stack: domestic and allied-nation mineral processing, refining, and recycling. Redwood Materials (Nevada recycling at 95%+ recovery rates), Albemarle DLE (90% lithium recovery vs 50% conventional), and Lynas REE processing are the clearest examples of the category that policy, price, and supply dynamics are all pointing toward simultaneously.</p>
-    </div>
-  </div>
-
-  <div class="analysis-block">
-    <div class="analysis-title"><span class="signal signal-watch">Watch</span> June 30 Copper Tariff Decision — The Most Market-Moving Date of the Month</div>
-    <div class="analysis-body">
-      <p>On June 30, 2026, the U.S. Secretary of Commerce will deliver a recommendation to the White House on whether to impose 15% refined copper tariffs in 2027 and 30% in 2028. This single decision could fundamentally reshape global copper market structure for years. The anticipation of this decision has already triggered massive accumulation in U.S. domestic warehouses — nearly one million tonnes stockpiled — significantly tightening physical availability in European and Asian markets and widening the COMEX/LME price premium to historically unusual levels.</p>
-      <p>Copper hit a record $6.60/lb on June 2nd partly on tariff anticipation before pulling back to $6.28 today. Goldman Sachs raised its year-end 2026 copper forecast to $13,735/tonne. Jefferies now projects an average annual supply deficit of 491,000 tonnes through 2030. The structural case for copper is among the strongest of any commodity — AI data centers consume 3-10x more copper than traditional facilities, and the global grid buildout required for electrification is just beginning.</p>
-      <p>For the MUUS portfolio: any company with copper-intensive hardware (grid infrastructure, EV charging, solar installation) faces a meaningful cost inflection if tariffs are implemented. Conversely, companies with domestic U.S. copper sourcing or copper-light designs are positioned to benefit from the competitive moat those tariffs would create. The June 30 decision deserves direct attention from the portfolio management team this month.</p>
-    </div>
-  </div>
-
   <div class="src">
-    Sources: IEA Global Critical Minerals Outlook 2025 · OECD Inventory of Export Restrictions on Critical Raw Materials 2026 (Apr 28, 2026) · CSIS "New Executive Order Ties U.S. Critical Minerals Security to Global Partnerships" (Jan 2026) · ETH Zürich / Andersen Institute "China's Export Control Architecture" (Apr 2026) · Discovery Alert "China Rare Earth Export Controls and Global Supply Chain 2026" (Apr 29, 2026) · Trading Economics (copper $6.01/lb, Apr 14, 2026) · Credendo (lithium +78.3%, Feb 2026) · SunSirs (NdPr +29%, Feb 2026) · Sustainability Atlas "Critical Minerals Supply Chains 2026" (Mar 2026) · WRI "Critical Minerals Explained"<br>
-    Note: Production share figures and price data are approximate. Chart trend lines are directional indexes, not exact price curves. This report was compiled using AI-assisted research on June 10, 2026 for internal use at MUUS &amp; Company. The next version will connect each section to verified live data feeds.
+    <strong>Sources &amp; method.</strong> Prices: Trading Economics / LME / COMEX spot snapshots, week of June 22–25, 2026 (copper ~$6.05/lb; lithium carbonate China ~CNY 152–169k/t; nickel ~$17,200/t). Company facts: Nth Cycle and Aepnus press and public materials, PR Newswire / Mining.com (Trafigura offtake, Mar 2026), Recycling Today / Latitude Media (Aepnus seed, 2024), Clean Energy Ventures, Lowercarbon. Catalysts: Rio Tinto release (Mar 13, 2026) on the Bécancour slowdown; Fastmarkets and trade press on black-mass policy; Glencore / Li-Cycle bankruptcy filings and ESG Dive / Waste Dive (2025). Policy: FY2026 NDAA summaries; FEOC guidance.<br>
+    <strong>What could be wrong.</strong> Spot prices are point-in-time and move daily — the June pullback may reverse or deepen. The black-mass export ban is <strong>not enacted</strong>; do not treat it as a base case. The Nemaska timeline is genuinely uncertain after Rio Tinto's slowdown. Specialty lithium and black-mass prices from free sources are approximate; precision needs Fastmarkets or Bloomberg. Company-level reads are inferred from public information and will be reconciled against the MUUS investment memos once the NDA is in place. Aepnus is pre-commercial, so its analysis is more inferential than Nth Cycle's.<br>
+    <strong>Housekeeping.</strong> This prototype is on a public link; move to private hosting or delivery before any NDA-covered memo content is added. Compiled June 26, 2026 for internal use at MUUS &amp; Company.
   </div>
 
 </div>
-
-
 
 <script>
 (function() {
@@ -352,12 +386,11 @@ tr:hover td { background: #fafaf8; }
     var cw = W - pad.left - pad.right;
     var ch = H - pad.top - pad.bottom;
 
-    var labels = ['Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26'];
+    var labels = ['Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26','Jun 26'];
     var datasets = [
-      { label:'Copper',      data:[100,104,108,114,121,128,134], color:'#1d9e75', dash:[] },
-      { label:'Lithium',     data:[100,94,80,90,112,130,140],   color:'#378add', dash:[5,3] },
-      { label:'Cobalt',      data:[100,101,104,110,114,119,122],color:'#ba7517', dash:[2,2] },
-      { label:'NdPr REE',    data:[100,103,100,109,118,126,129],color:'#d85a30', dash:[8,4] }
+      { label:'Copper',  data:[100,103,104,107,110,116,110], color:'#1d9e75', dash:[] },
+      { label:'Lithium', data:[100,112,124,134,142,156,130], color:'#378add', dash:[5,3] },
+      { label:'Nickel',  data:[100,106,110,116,120,124,109], color:'#ba7517', dash:[2,2] }
     ];
 
     var allVals = datasets.reduce(function(a,d){ return a.concat(d.data); }, []);
@@ -368,7 +401,6 @@ tr:hover td { background: #fafaf8; }
     function xPos(i) { return pad.left + (i / (n-1)) * cw; }
     function yPos(v) { return pad.top + ch - ((v - minY) / (maxY - minY)) * ch; }
 
-    // Grid lines
     ctx.strokeStyle = 'rgba(0,0,0,0.06)';
     ctx.lineWidth = 1;
     var ySteps = 5;
@@ -382,7 +414,6 @@ tr:hover td { background: #fafaf8; }
       ctx.fillText(Math.round(yv), pad.left - 6, y + 3);
     }
 
-    // X labels
     ctx.fillStyle = '#8a8a84';
     ctx.font = (isMobile ? '9' : '10') + 'px monospace';
     ctx.textAlign = 'center';
@@ -390,7 +421,6 @@ tr:hover td { background: #fafaf8; }
       ctx.fillText(labels[i], xPos(i), H - pad.bottom + 16);
     }
 
-    // Lines
     datasets.forEach(function(ds) {
       ctx.beginPath();
       ctx.strokeStyle = ds.color;
@@ -402,8 +432,6 @@ tr:hover td { background: #fafaf8; }
       });
       ctx.stroke();
       ctx.setLineDash([]);
-
-      // Dots
       ds.data.forEach(function(v, i) {
         ctx.beginPath();
         ctx.arc(xPos(i), yPos(v), isMobile ? 2.5 : 3, 0, Math.PI * 2);
