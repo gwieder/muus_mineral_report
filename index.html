@@ -9,119 +9,110 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --green: #1a6b3c; --green-light: #e1f5ee; --green-mid: #0f6e56; --green-dark: #085041;
-  --blue-light: #e6f1fb; --blue-mid: #0c447c;
   --amber-light: #faeeda; --amber-dark: #633806;
   --red-light: #faece7; --red-mid: #993c1d;
   --purple-light: #f0eafa; --purple-mid: #5a2d82;
   --text-primary: #1a1a18; --text-secondary: #5a5a56; --text-muted: #8a8a84;
   --bg: #ffffff; --bg-secondary: #f7f6f2; --border: rgba(0,0,0,0.08); --border-strong: rgba(0,0,0,0.14);
-  --up: #0f6e56; --down: #993c1d;
 }
 body { font-family: 'DM Sans', -apple-system, sans-serif; background: #f0efe9; color: var(--text-primary); line-height: 1.6; padding: 2rem 1rem 4rem; }
-.report { max-width: 960px; margin: 0 auto; background: var(--bg); border-radius: 16px; padding: 2.5rem 2.5rem 3rem; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
-.report-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; padding-bottom: 1.25rem; border-bottom: 2.5px solid var(--green); margin-bottom: 2rem; }
-.report-title { font-size: 22px; font-weight: 500; color: var(--text-primary); letter-spacing: -0.3px; margin-bottom: 6px; }
+.report { max-width: 980px; margin: 0 auto; background: var(--bg); border-radius: 16px; padding: 2.5rem 2.5rem 3rem; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+.report-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; padding-bottom: 1.25rem; border-bottom: 2.5px solid var(--green); margin-bottom: 1.5rem; }
+.report-title { font-size: 22px; font-weight: 500; letter-spacing: -0.3px; margin-bottom: 6px; }
 .report-meta { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .tag { display: inline-block; background: var(--green-light); color: var(--green-mid); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
 .sources { font-size: 11px; color: var(--text-muted); text-align: right; line-height: 1.7; font-family: 'DM Mono', monospace; }
-.sl { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin: 2rem 0 0.75rem; font-family: 'DM Mono', monospace; }
+.sl { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin: 2.25rem 0 0.75rem; font-family: 'DM Mono', monospace; }
 .sl-sub { font-size: 11px; color: var(--text-muted); font-weight: 400; text-transform: none; letter-spacing: 0; margin-left: 8px; font-family: 'DM Sans', sans-serif; }
-.exec { background: var(--bg-secondary); border-left: 3px solid var(--green); padding: 1.15rem 1.3rem; border-radius: 0 10px 10px 0; font-size: 13.5px; line-height: 1.9; color: var(--text-primary); }
-.exec p { margin-bottom: 0.7rem; } .exec p:last-child { margin-bottom: 0; }
-.exec strong { font-weight: 500; color: var(--green-dark); }
-.divider { height: 1px; background: var(--border); margin: 2rem 0; }
 .banner { background: #fffbeb; border: 1px solid #f0c040; border-radius: 8px; padding: 0.6rem 1rem; font-size: 11.5px; color: #7a5c00; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+.divider { height: 1px; background: var(--border); margin: 2.25rem 0; }
 
-/* CHANGE LOG */
-.chg { display: grid; grid-template-columns: 104px 1fr; gap: 16px; padding: 0.95rem 0; border-top: 1px solid var(--border); }
-.chg:first-of-type { border-top: none; }
+/* SO WHAT */
+.sw { background: var(--bg-secondary); border-left: 3px solid var(--green); border-radius: 0 10px 10px 0; padding: 1.1rem 1.3rem; }
+.sw-item { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 0.75rem 0; border-top: 1px solid var(--border); }
+.sw-item:first-child { border-top: none; padding-top: 0; }
+.sw-item:last-child { padding-bottom: 0; }
+.sw-h { font-size: 13.5px; font-weight: 500; color: var(--text-primary); line-height: 1.6; }
+.sw-b { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+.sw-b strong { color: var(--text-primary); font-weight: 500; }
+.sw-do { font-size: 12px; color: var(--purple-mid); font-family: 'DM Mono', monospace; margin-top: 4px; line-height: 1.6; }
+.sw-do b { font-weight: 500; }
+
+/* COMPANY */
+.company { border: 1px solid var(--border-strong); border-radius: 12px; padding: 1.4rem 1.5rem; margin-bottom: 16px; }
+.co-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid var(--green); padding-bottom: 0.7rem; margin-bottom: 1rem; }
+.co-name { font-size: 18px; font-weight: 500; }
+.co-desc { font-size: 11.5px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.co-read { background: var(--green-light); border-radius: 8px; padding: 0.9rem 1.1rem; font-size: 13px; line-height: 1.85; margin-bottom: 1.2rem; }
+.co-read strong { font-weight: 500; color: var(--green-dark); }
+.co-sub { font-size: 10.5px; font-weight: 500; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); margin: 1.4rem 0 0.5rem; }
+.co-p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.7rem; }
+.co-p:last-child { margin-bottom: 0; }
+.co-p strong { color: var(--text-primary); font-weight: 500; }
+
+.chg { display: grid; grid-template-columns: 116px 1fr; gap: 16px; padding: 0.9rem 0; border-top: 1px solid var(--border); }
 .chg-topic { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--green-dark); font-weight: 500; line-height: 1.4; }
-.chg-move { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.chg-move { font-size: 10.5px; color: var(--text-muted); margin-top: 4px; }
 .chg-body { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
 .chg-body strong { color: var(--text-primary); font-weight: 500; }
-.chg-meta { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.chip { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; background: var(--bg); border: 1px solid var(--border-strong); color: var(--text-secondary); }
-.chip-nc { background: var(--blue-light); color: var(--blue-mid); border-color: transparent; }
-.chip-ae { background: var(--purple-light); color: var(--purple-mid); border-color: transparent; }
-.signal { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
-.signal-risk { background: var(--red-light); color: var(--red-mid); }
-.signal-opp { background: var(--green-light); color: var(--green-dark); }
-.signal-watch { background: var(--amber-light); color: var(--amber-dark); }
-.signal-cat { background: #efe6fb; color: var(--purple-mid); }
-.ping { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--purple-mid); display: inline-flex; align-items: center; gap: 4px; }
-.ping::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple-mid); display: inline-block; }
+.trk { margin-top: 8px; font-size: 11.5px; color: var(--text-primary); background: var(--bg-secondary); border-radius: 6px; padding: 0.55rem 0.75rem; line-height: 1.7; }
+.trk b { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--purple-mid); font-weight: 500; }
+.signal { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; margin-top: 6px; }
+.s-risk { background: var(--red-light); color: var(--red-mid); }
+.s-opp { background: var(--green-light); color: var(--green-dark); }
+.s-watch { background: var(--amber-light); color: var(--amber-dark); }
 
-/* METRIC CARDS + TABLE */
-.mg { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 1.5rem; }
-.mc { background: var(--bg-secondary); border-radius: 10px; padding: 0.875rem 1rem; }
-.mc-l { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 3px; }
-.mc-v { font-size: 19px; font-weight: 400; color: var(--text-primary); letter-spacing: -0.5px; }
-.mc-v span { font-size: 12px; }
-.mc-s { font-size: 11px; margin-top: 4px; line-height: 1.45; }
-.up { color: var(--up); } .dn { color: var(--down); } .nt { color: var(--text-muted); }
-.tw { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.5rem; padding: 0 0.5rem; }
+/* ASK BOX — the "what am I missing" register */
+.ask { border: 1px solid #c9b3e8; background: #faf7fe; border-radius: 10px; padding: 1rem 1.15rem; margin: 0.8rem 0; }
+.ask-h { font-size: 11px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--purple-mid); font-weight: 500; margin-bottom: 0.5rem; }
+.ask-b { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+.ask-b strong { color: var(--text-primary); font-weight: 500; }
+.ask-q { font-size: 13px; color: var(--purple-mid); font-weight: 500; margin-top: 0.6rem; line-height: 1.7; }
+
+/* PROOF POINTS */
+.pp { display: grid; grid-template-columns: 1fr; }
+.pp-row { display: grid; grid-template-columns: 1fr 96px; gap: 12px; padding: 0.6rem 0; border-top: 1px solid var(--border); align-items: start; }
+.pp-row:first-child { border-top: none; }
+.pp-t { font-size: 12.5px; color: var(--text-secondary); line-height: 1.7; }
+.pp-t b { color: var(--text-primary); font-weight: 500; }
+.pp-s { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 4px; text-align: center; font-family: 'DM Mono', monospace; }
+.pp-met { background: var(--green-light); color: var(--green-dark); }
+.pp-part { background: var(--amber-light); color: var(--amber-dark); }
+.pp-miss { background: var(--red-light); color: var(--red-mid); }
+.pp-unk { background: var(--bg-secondary); color: var(--text-muted); }
+
+.tw { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.25rem; padding: 0 0.25rem; }
 table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-th { text-align: left; padding: 8px 10px; font-size: 10px; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border-strong); font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
-td { padding: 10px 10px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-primary); }
+th { text-align: left; padding: 7px 9px; font-size: 9.5px; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border-strong); font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+td { padding: 9px; border-bottom: 1px solid var(--border); vertical-align: top; }
 tr:last-child td { border-bottom: none; }
 .mn { font-weight: 500; font-size: 13px; }
 .ms { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-top: 1px; }
+.num { font-family: 'DM Mono', monospace; font-size: 12px; }
 .badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 500; }
 .bu { background: var(--green-light); color: var(--green-dark); }
 .bd { background: var(--red-light); color: var(--red-mid); }
 .bn { background: var(--bg-secondary); color: var(--text-muted); }
-.dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
-.db { background: #1d9e75; } .dr { background: #d85a30; } .dn2 { background: #888780; }
 
-/* CHART */
-.cw { position: relative; width: 100%; height: 240px; min-height: 240px; display: block; margin: 0.75rem 0 0.5rem; }
-.leg { display: flex; flex-wrap: wrap; gap: 16px; font-size: 11px; color: var(--text-muted); margin-bottom: 0.5rem; font-family: 'DM Mono', monospace; }
-.leg span { display: flex; align-items: center; gap: 6px; }
-.tk { background: var(--bg-secondary); border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin: 0.75rem 0 0; }
-.tk strong { color: var(--text-primary); font-weight: 500; }
-
-/* COMPANY IMPACT — PROSE */
-.company { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1.35rem 1.5rem; margin-bottom: 16px; }
-.co-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; margin-bottom: 1rem; }
-.co-name { font-size: 17px; font-weight: 500; color: var(--text-primary); }
-.co-desc { font-size: 11.5px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
-.co-sub { font-size: 10.5px; font-weight: 500; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); margin: 1rem 0 0.45rem; }
-.co-p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.7rem; }
-.co-p:last-child { margin-bottom: 0; }
-.co-p strong { color: var(--text-primary); font-weight: 500; }
-.caveat { font-size: 12px; color: var(--amber-dark); background: var(--amber-light); border-radius: 6px; padding: 0.55rem 0.8rem; line-height: 1.65; margin-top: 0.6rem; }
-.caveat strong { font-weight: 500; }
 .wl { margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
-.wl-row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 5px 0; font-size: 12px; }
+.wl-row { display: grid; grid-template-columns: 118px 1fr; gap: 12px; padding: 5px 0; font-size: 12px; }
 .wl-k { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 3px; }
 .wl-v { color: var(--text-secondary); line-height: 1.7; }
-.wl-v .pill { display: inline-block; background: var(--bg-secondary); border-radius: 4px; padding: 2px 7px; margin: 0 4px 4px 0; font-size: 11px; color: var(--text-primary); }
+.pill { display: inline-block; background: var(--bg-secondary); border-radius: 4px; padding: 2px 7px; margin: 0 4px 4px 0; font-size: 11px; color: var(--text-primary); }
 .wl-note { font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 8px; }
 
-/* NEWS CARDS */
+.cw { position: relative; width: 100%; height: 190px; margin: 0.4rem 0; }
+.tk { background: var(--bg-secondary); border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+.tk strong { color: var(--text-primary); font-weight: 500; }
+
 .ng { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
-.nc { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1rem 1.1rem; }
-.nc.cat { border-color: #c9b3e8; background: #faf7fe; }
-.nc-src { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-bottom: 6px; font-family: 'DM Mono', monospace; gap: 8px; }
-.nc-t { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px; line-height: 1.45; }
-.nc-b { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
-.nc-analysis { font-size: 12px; color: var(--text-primary); line-height: 1.7; background: var(--bg-secondary); border-radius: 6px; padding: 0.55rem 0.75rem; }
-.nc-analysis strong { color: var(--green); font-weight: 500; }
-.ntag { font-size: 10px; padding: 2px 7px; border-radius: 3px; }
-.ntag-policy { background: var(--blue-light); color: var(--blue-mid); }
-.ntag-metal { background: var(--amber-light); color: var(--amber-dark); }
-.ntag-risk { background: var(--red-light); color: var(--red-mid); }
+.nc { border: 1px solid var(--border-strong); border-radius: 12px; padding: 0.9rem 1rem; }
+.nc-src { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-muted); margin-bottom: 5px; font-family: 'DM Mono', monospace; gap: 8px; }
+.nc-t { font-size: 12.5px; font-weight: 500; margin-bottom: 5px; line-height: 1.45; }
+.nc-t a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border-strong); }
+.nc-t a:hover { color: var(--green); border-color: var(--green); }
+.nc-b { font-size: 11.5px; color: var(--text-secondary); line-height: 1.65; }
 
-/* REGIONAL (DEMOTED) */
-.region-label { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; display: inline-block; white-space: nowrap; }
-.reg-na { background: var(--blue-light); color: var(--blue-mid); }
-.reg-china { background: var(--red-light); color: var(--red-mid); }
-.dep-high { color: var(--down); font-weight: 500; }
-.dep-low { color: var(--up); font-weight: 500; }
-.reg-note { font-size: 11px; color: var(--text-secondary); line-height: 1.55; }
-.quiet { opacity: 0.9; }
-
-/* DISCLAIMER */
 .src { font-size: 10.5px; color: var(--text-muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.85; font-family: 'DM Mono', monospace; }
 .src strong { color: var(--text-secondary); font-weight: 500; }
 
@@ -129,312 +120,347 @@ tr:last-child td { border-bottom: none; }
   body { padding: 0 0 3rem; }
   .report { border-radius: 0; padding: 1.25rem 1rem 2rem; box-shadow: none; }
   .report-header { flex-direction: column; align-items: flex-start; }
-  .report-title { font-size: 18px; }
   .sources { text-align: left; }
-  .mg { grid-template-columns: 1fr; }
-  .cw { height: 200px; min-height: 200px; }
   .ng { grid-template-columns: 1fr; }
   .chg { grid-template-columns: 1fr; gap: 6px; }
-  .wl-row { grid-template-columns: 1fr; gap: 2px; }
-  .company { padding: 1.1rem 1.1rem; }
+  .wl-row, .pp-row { grid-template-columns: 1fr; gap: 2px; }
+  .company { padding: 1.1rem; }
+  .cw { height: 220px; }
 }
 </style>
 </head>
 <body>
 <div class="report">
 
-  <div class="banner">⚠ <span><strong>Prototype (v5) — real data, illustrative assembly.</strong> Figures are drawn from public sources and dated where used (see Sources &amp; method at the end). They are point-in-time snapshots gathered for this prototype, not a live feed, and several carry real caveats called out in the text. Specialty pricing (lithium, black mass) will move to Fastmarkets or Bloomberg, and company analysis will be reconciled against the MUUS investment memos. Treat numbers as directionally accurate and verify before any decision.</span></div>
+  <div class="banner">⚠ <span><strong>Prototype v8.</strong> Everything here is researched as of today and scored against the thresholds in the memos. Prices are public sources pending Fastmarkets; the one number that matters most is not publicly available and is flagged as such. Confidential — internal MUUS use.</span></div>
 
   <div class="report-header">
     <div>
       <div class="report-title">Critical Minerals &amp; Metals Intelligence</div>
-      <div class="report-meta"><span class="tag">Weekly</span><span class="tag">North America</span><span class="tag">Li · Ni · Cu</span>&nbsp; Week of June 22, 2026 &nbsp;·&nbsp; MUUS &amp; Company</div>
+      <div class="report-meta"><span class="tag">Weekly</span><span class="tag">Nth Cycle · Aepnus</span><span class="tag">USD</span>&nbsp; July 15, 2026 &nbsp;·&nbsp; MUUS &amp; Company</div>
     </div>
-    <div class="sources">Prices: Trading Economics, LME, COMEX<br>Company &amp; policy: public filings + press</div>
+    <div class="sources">Prices: LME · Trading Economics · Fastmarkets via CME<br>Policy: Federal Register · White House</div>
   </div>
 
-  <!-- ============ SO WHAT ============ -->
-  <p class="sl">So What? <span class="sl-sub">Executive summary + what changed since you last looked (vs. week of June 15)</span></p>
-  <div class="exec">
-    <p>The metals complex cooled in June after a strong spring, and the move is more about the macro backdrop than about anything structural. Copper, lithium and nickel each peaked in early-to-mid May and have since pulled back: <strong>copper to around $6.05/lb, near a seven-week low; lithium off its mid-May high of roughly CNY 200,000/t to the CNY 152,000–169,000 range; and nickel from above $19,600/t to about $17,200/t, a two-month low.</strong> The shared driver is a firmer US dollar and a more hawkish Federal Reserve under new chair Kevin Warsh, plus profit-taking, rather than a change in the long-run supply-demand picture.</p>
-    <p>That distinction is the whole point for the portfolio. The structural theses underneath both Nth Cycle and Aepnus — domestic refining capacity, the lithium-refining buildout, and the policy push to onshore critical materials — are intact even as the spot tape softens. <strong>For a company weighing a raise, the read is that spring strength has cooled but the multi-year case has not broken: this looks like a cyclical breather, not a regime change.</strong> The near-term effect on Nth Cycle's metal-linked economics is a modest, cyclical trim; Aepnus is largely insulated because its driver is refining capacity, not metal prices.</p>
-    <p>Both named catalysts moved this quarter, and neither in the direction the headline framing implies. There is <strong>still no US black-mass export ban</strong> — a potential Nth Cycle tailwind that has not arrived and is not expected imminently. And <strong>Rio Tinto has slowed construction at Nemaska's Bécancour plant</strong>, which is a timing risk for Aepnus's pilot rather than the clean positive the project's existence might suggest. Both are detailed below.</p>
-  </div>
+  <!-- ===== SO WHAT ===== -->
+  <p class="sl" style="margin-top:0.5rem;">So What? <span class="sl-sub">12 weeks since the Nth Cycle note · 6 weeks since Aepnus A</span></p>
+  <div class="sw">
 
-  <p class="sl" style="margin-top:1.75rem;">Change Log <span class="sl-sub">the five items that moved the portfolio read</span></p>
-
-  <div class="chg">
-    <div><div class="chg-topic">Copper</div><div class="chg-move">$6.05/lb · ▼ from May</div></div>
-    <div class="chg-body">
-      Copper slipped to roughly <strong>$6.05/lb in the week of June 22</strong>, near a seven-week low, after touching $6.34 on June 19 and a record near $6.60 on June 2. The pullback is macro-driven (dollar, Fed) rather than demand destruction, and the structural deficit narrative into the 2030s — AI data centers and grid build-out — is unchanged. <strong>For Nth Cycle:</strong> the refined-copper share of output is worth marginally less week-on-week, but the multi-year tailwind holds.
-      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="signal signal-watch">Cooling, thesis intact</span></div>
+    <div class="sw-item">
+      <div class="sw-h">Nickel is 33% below where the Nth Cycle model puts it, and it broke on a policy reversal, not a cycle.</div>
+      <div class="sw-b">$16,796/t today (model: $25k). Down 14% in June alone. The cause is specific and durable: <strong>Indonesia is preparing to lift 2026 RKAB quotas back to ~360Mt from the 260Mt issued in H1</strong>, unwinding the exact tightening that drove the Q1 rally. Cobalt (+17%) and lithium (+78%) offset in the smaller lines. Copper at $13.34/kg clears the $13/kg the copper payback was underwritten at, so that platform holds.</div>
+      <div class="sw-do"><b>Do:</b> ask whether the Ni assumption gets revised for the Series C deck. A quota reversal is not a dip.</div>
     </div>
-  </div>
 
-  <div class="chg">
-    <div><div class="chg-topic">Lithium</div><div class="chg-move">~CNY 152–169k/t · volatile</div></div>
-    <div class="chg-body">
-      The most volatile of the three. Carbonate in China ran to about <strong>CNY 200,000/t in mid-May — a two-and-a-half-year high, up more than 160% from the 2025 lows</strong> — then fell back to roughly CNY 152,000–169,000/t (~$22,000–24,000) in June as the market priced in possible supply restarts (CATL's Jianxiawo mine, plus Australia's Bald Hill and Finniss). Still far above the 2025 trough, which keeps the lithium-refining buildout economic. <strong>For both companies:</strong> the spike that lifted sentiment has cooled, but the level still supports new hydroxide capacity.
-      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="chip chip-ae">Aepnus</span><span class="signal signal-watch">Off the highs</span></div>
+    <div class="sw-item">
+      <div class="sw-h">Black mass payables printed all-time highs in Asia. That is the input side of the spread going the wrong way.</div>
+      <div class="sw-b">Fastmarkets assessed NCM CIF South Korea at <strong>87.5% Ni/Co on 7 January — an all-time high</strong> — and high-purity powder meeting China's import spec printed <strong>above 100% payable for the first time</strong>. China domestic was 74–75% DDP in mid-June. Those are Asian benchmarks, not the EXW USA index Nth Cycle buys against, so this is a directional warning rather than a measured hit. But the direction is unambiguous and it compounds with the nickel gap.</div>
+      <div class="sw-do"><b>Do:</b> get the Fastmarkets EXW USA / EXW Europe payable indicators. Without them this dashboard cannot see the metric that drives the business.</div>
     </div>
-  </div>
 
-  <div class="chg">
-    <div><div class="chg-topic">Nickel</div><div class="chg-move">~$17,200/t · 2-mo low</div></div>
-    <div class="chg-body">
-      Nickel fell to about <strong>$17,200/t by June 24, a two-month low</strong>, after a rally above $19,600 in early May. Indonesia's 2026 ore-quota cut (to 250–260Mt from 379Mt) put a floor under sentiment, but a structural surplus and the industry's shift toward LFP chemistries — which use no nickel — cap the upside. <strong>For Nth Cycle:</strong> refined-nickel economics are soft, and the LFP shift is a genuine medium-term demand question for the nickel/cobalt side of its book.
-      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="signal signal-risk">Soft + structural question</span></div>
+    <div class="sw-item">
+      <div class="sw-h">Europe is already running the US export-ban experiment, and nobody is reading the results.</div>
+      <div class="sw-b">Fastmarkets describes a two-tier market: production scrap meeting China's spec commands premiums, while <strong>end-of-life material, particularly from Europe, faces weaker demand because of hazardous-waste export restrictions</strong>. That is precisely the mechanism the US EO is supposed to create — trapped feedstock, suppressed payable — running live in the jurisdiction where Rotterdam sits. If it holds, <strong>Rotterdam's spread should already be wider than South Carolina's</strong>, which the 26% SC / 19% NL base IRRs do not reflect.</div>
+      <div class="sw-do"><b>Do:</b> ask what payable they are paying at Rotterdam vs. the US. This is the cheapest available proxy for what the EO would be worth.</div>
     </div>
-  </div>
 
-  <div class="chg">
-    <div><div class="chg-topic">Black-mass export ban</div><div class="chg-move">catalyst · not enacted</div></div>
-    <div class="chg-body">
-      Worth stating plainly: <strong>there is no US black-mass export ban, and most market participants do not expect one imminently.</strong> The US is still a net black-mass exporter; the real constraint is a shortage of domestic refining capacity, not feedstock. For context, the EU is restricting black-mass exports from late 2026 and China (≈75% of global black-mass processing) reopened imports in 2025 to pull feedstock in. This is a <strong>potential future tailwind for Nth Cycle</strong> — restricted exports would keep recycled feedstock onshore — but it is not live policy. Treat as a standing alert, not a base case.
-      <div class="chg-meta"><span class="chip chip-nc">Nth Cycle</span><span class="signal signal-cat">Catalyst</span><span class="ping">ping if status changes</span></div>
+    <div class="sw-item">
+      <div class="sw-h">No export ban. And the policy that did move went import-side, which is arguably better.</div>
+      <div class="sw-b">Nothing in the Federal Register, nothing from the White House, and the summer session has largely passed. So the 71% "most likely" SC case has not arrived. But the January 14 Section 232 proclamation on processed critical mineral <em>imports</em> reserved tariffs, contemplated <strong>minimum import prices</strong>, and required a negotiation report <strong>within 180 days — which fell on July 13, two days ago</strong>. A price floor on MHP would be worth more to Nth Cycle than most grant outcomes and is closer to landing than the ban.</div>
+      <div class="sw-do"><b>Do:</b> retire the ban as a base case; start tracking the 232 report. Nth Cycle's DC relationships are pointed at the wrong door.</div>
     </div>
-  </div>
 
-  <div class="chg">
-    <div><div class="chg-topic">Nemaska / Bécancour</div><div class="chg-move">catalyst · slowed</div></div>
-    <div class="chg-body">
-      The more consequential move this quarter. Rio Tinto took majority control of Nemaska (53.9%, via its Arcadium acquisition) and assumed management in February; on <strong>March 13 it announced it was slowing construction of the Bécancour lithium-hydroxide plant for an "optimization" period and temporarily cutting the contractor workforce</strong>, even though the plant is over 70% built. Rio reaffirmed its commitment and a $300M+ 2026 Quebec investment, but the slowdown introduces timeline risk. Because Nemaska is a named feedstock partner on Aepnus's co-located Bécancour pilot, <strong>this is a watch item for Aepnus's pilot cadence</strong>, not the positive the project's mere existence might imply.
-      <div class="chg-meta"><span class="chip chip-ae">Aepnus</span><span class="signal signal-cat">Catalyst</span><span class="ping">ping if status changes</span></div>
+    <div class="sw-item">
+      <div class="sw-h">Both rounds passed their target close dates without a public announcement.</div>
+      <div class="sw-b">Nth Cycle's Series C was to close <strong>June</strong>; PitchBook still shows ~$65.6M raised, consistent with no new round. Aepnus targeted a <strong>$10M first close by end of May</strong>. Neither is proof of failure — private rounds go unannounced — but on Nth Cycle's $8M cash and $15M/yr burn, straight-lining puts them near <strong>$4M today</strong>. Also live right now: the $100M DOE grant notification window, and the balance of Aepnus's demo grant expected "this summer."</div>
+      <div class="sw-do"><b>Do:</b> four emails. Series C status, note fill, DOE notification, Aepnus first close.</div>
     </div>
+
+    <div class="sw-item">
+      <div class="sw-h">Aepnus is untouched by all of the above. Nemaska is still the only thing that matters, and it is narrower than we thought.</div>
+      <div class="sw-b">The caustic spread ($950 Bécancour vs $214 production) has not moved. Rio Tinto has issued nothing since March 13. One correction worth having: <strong>the pilot that produced the 2,000-hour record never ran on Nemaska's feedstock</strong> — it used a nearby supplier's sodium sulfate carrying more impurities than the partners' own limits. The technical record is independent of Nemaska. The $36M/yr offtake is not.</div>
+      <div class="sw-do"><b>Do:</b> nothing yet. Next Rio Tinto quarterly is the trigger.</div>
+    </div>
+
   </div>
 
-  <div class="divider"></div>
-
-  <!-- ============ PRICES ============ -->
-  <p class="sl">Macro Signals <span class="sl-sub">lithium · nickel · copper · spot snapshots, late June 2026</span></p>
-  <div class="mg">
-    <div class="mc"><div class="mc-l">Copper (COMEX)</div><div class="mc-v">~$6.05<span>/lb</span></div><div class="mc-s dn">▼ from $6.34 (Jun 19) · near 7-wk low</div></div>
-    <div class="mc"><div class="mc-l">Lithium Carbonate (China)</div><div class="mc-v">~CNY 160k<span>/t (~$23k)</span></div><div class="mc-s nt">Volatile · off mid-May 2.5-yr high</div></div>
-    <div class="mc"><div class="mc-l">Nickel (LME)</div><div class="mc-v">~$17,200<span>/t</span></div><div class="mc-s dn">▼ 2-month low · surplus caps upside</div></div>
-  </div>
-
-  <div class="tw">
-  <table>
-    <thead><tr><th style="width:118px;">Metal</th><th>Spot (late Jun)</th><th>Trend</th><th>Driver and portfolio read</th></tr></thead>
-    <tbody>
-      <tr><td><div class="mn">Copper</div><div class="ms">Cu · COMEX</div></td><td>~$6.05/lb</td><td><span class="badge bd">Pullback</span></td><td>Off the June 2 record (~$6.60) on dollar strength and a hawkish Fed; structural deficit (AI data centers, grid) intact into the 2030s. Lifts the value of Nth Cycle's refined-copper output over time; a cyclical trim near-term.</td></tr>
-      <tr><td><div class="mn">Lithium</div><div class="ms">Li · carbonate, China</div></td><td>~CNY 160k/t (~$23k)</td><td><span class="badge bn">Volatile</span></td><td>Ran to a 2.5-year high (~CNY 200k) mid-May, then pulled back on supply-restart speculation. Still well above 2025 lows, keeping lithium-hydroxide refining economic — the demand driver behind Aepnus and a value driver for Nth Cycle.</td></tr>
-      <tr><td><div class="mn">Nickel</div><div class="ms">Ni · LME</div></td><td>~$17,200/t</td><td><span class="badge bd">2-mo low</span></td><td>Indonesia (≈60% of supply) cut its 2026 ore quota ~34%, but a structural surplus and the LFP-over-NMC shift weigh on demand. Soft refined-nickel economics for Nth Cycle's Ni/Co line.</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <p class="sl" style="margin-top:1.5rem;">6-Month Price Trend <span class="sl-sub">indexed to 100 · directional, anchored to the spot levels above</span></p>
-  <div class="cw" id="chartWrap" style="position:relative;width:100%;height:240px;min-height:240px;display:block;">
-    <canvas id="priceChart" style="display:block;width:100%!important;height:240px!important;" role="img" aria-label="Indexed price trends for copper, lithium and nickel, Dec 2025 to Jun 2026, all peaking around May then pulling back."></canvas>
-  </div>
-  <div class="leg">
-    <span><span style="width:20px;height:2px;background:#1d9e75;display:inline-block;"></span>Copper</span>
-    <span><span style="width:20px;height:0;border-top:2px dashed #378add;display:inline-block;"></span>Lithium</span>
-    <span><span style="width:20px;height:0;border-top:2px dotted #ba7517;display:inline-block;"></span>Nickel</span>
-  </div>
-  <div class="tk"><strong>Read:</strong> the same shape in all three lines — a spring rally peaking around May, then a June pullback — is the tell that this is a macro move, not three separate stories. The portfolio question is therefore not "why did each metal fall" but "is the structural case still intact under the cyclical noise," and for copper and lithium it is. (Lines are indexed and directional; exact spot levels are in the table.)</div>
-
-  <div class="divider"></div>
-
-  <!-- ============ PER-COMPANY ============ -->
-  <p class="sl">Portfolio Company Impact <span class="sl-sub">how the macro and the catalysts translate to each company</span></p>
-
-  <!-- NTH CYCLE -->
+  <!-- ===== NTH CYCLE ===== -->
+  <p class="sl">Nth Cycle</p>
   <div class="company">
     <div class="co-head">
       <div class="co-name">Nth Cycle</div>
-      <div class="co-desc">Domestic critical-mineral refiner</div>
+      <div class="co-desc">$1M note @ $235M cap · ~0.83% · 4/23/26</div>
     </div>
 
-    <div class="co-sub">This week's read</div>
-    <p class="co-p">June's pullback in nickel and lithium trims the near-term value of the Trafigura offtake, which is priced on the metals Nth Cycle produces (2,000 t/yr of contained nickel in MHP and 1,500 t/yr of lithium carbonate). The same volumes are worth somewhat less than they were in May — but the effect is modest and cyclical: contained nickel near $17,200/t and lithium carbonate in the low-$20,000s/t both sit well above the 2025 lows that made refining economics marginal, and a 10-year term smooths the swings. The more durable point runs the other way — margins improve with metal-price strength against a relatively fixed feedstock cost, so the structural copper and lithium case is a tailwind even while the spot tape cools.</p>
+    <div class="co-read">
+      <strong>Read:</strong> technology is not the issue and did not become one this quarter. Capital formation got harder in three places at once — the largest price input broke on an Indonesian policy reversal, input payables printed records, and the policy tailwind embedded in the "most likely" case did not arrive while a different, better policy lever quietly did. The Trafigura contract and its COD test are untouched.
+    </div>
 
-    <div class="co-sub">Competitive context — clearing in their favor</div>
-    <p class="co-p"><strong>Li-Cycle</strong> filed for bankruptcy in May 2025 after its $485M Rochester hub stalled on cost overruns and it could not meet the conditions to draw a $475M DOE loan; <strong>Glencore</strong> bought the assets for roughly $40M and folded them into Glencore Battery Recycling. The capital-intensive centralized model failing is close to a direct argument for the modular, lower-capex approach. The counterweight is <strong>Redwood Materials</strong>, still well-capitalized (over $2B raised privately) and having walked away from its own DOE loan — the strongest competitor in the category is thriving, not distressed. Net: the field is thinning at the weak end while the funded end stays strong, so the live risk sits in execution and ramp toward the 2028 expansions, not in technology or demand.</p>
+    <div class="co-sub">Prices vs. the model</div>
+    <div class="cw"><canvas id="chartA" role="img" aria-label="Nickel 33 percent below model assumption; copper 3 percent above; cobalt 17 percent above; lithium 78 percent above."></canvas></div>
+    <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px;">Metal</th><th>Today</th><th>vs model</th><th>What actually moved</th></tr></thead>
+      <tbody>
+        <tr><td><div class="mn">Nickel</div><div class="ms">74% of BM value</div></td><td class="num">$16,796/t<div class="ms">($25k)</div></td><td><span class="badge bd">−33%</span></td><td>Indonesia preparing to reverse its own quota tightening — RKABs back to ~360Mt from 260Mt. LME and SHFE inventories elevated, NPI quiet. This is a supply-policy unwind, not a demand story, which makes it stickier than a cycle.</td></tr>
+        <tr><td><div class="mn">Cobalt</div><div class="ms">14%</div></td><td class="num">$25.50/lb<div class="ms">~$56.2k/t ($48k)</div></td><td><span class="badge bu">+17%</span></td><td>ARECOMS confirmed 29 June that unused H1 quota is forfeited to the strategic reserve — an estimated 15kt of contained cobalt withdrawn from a 96,600t/yr cap that is already half of 2024 output.</td></tr>
+        <tr><td><div class="mn">Lithium</div><div class="ms">12% of BM value · 42% of unit revenue</div></td><td class="num">~$21,000/t<div class="ms">($12k)</div></td><td><span class="badge bu">+78%</span></td><td><strong>The cushion is the thing at risk.</strong> Jianxiawo has cleared its permits with a September restart looking likely; Zijin's Manono began producing with first exports this month. Together potentially +280kt LCE, or 10–15% of 2026 global supply.</td></tr>
+        <tr><td><div class="mn">Copper</div><div class="ms">add-on platform</div></td><td class="num">$13.34/kg<div class="ms">($13.00)</div></td><td><span class="badge bu">+3%</span></td><td>Clears the underwriting. The $7M capex / &lt;2yr payback / 70% margin case holds at today's price, which also settles the internal conflict where $13/kg sat above the memo's own stated spot range.</td></tr>
+      </tbody>
+    </table>
+    </div>
 
-    <div class="co-sub">What to watch</div>
-    <p class="co-p">Whether the metals pullback deepens or reverses (a sustained slide would pressure refined-output economics); the LFP-versus-nickel chemistry shift, a slow but genuine demand question for the nickel/cobalt side of the book; and the black-mass export-ban discussion — not policy today, but a meaningful feedstock tailwind if it ever became policy, which is why it earns a standing alert.</p>
+    <div class="ask">
+      <div class="ask-h">What are we missing — the spread doesn't clear their own bar</div>
+      <div class="ask-b">Running the payability arithmetic at the model's <em>own</em> assumptions, before anything that happened this quarter: 82% out minus 65% in is <strong>17 points</strong>. The number given to the National Energy Dominance Council was that the spread "has to be at least 20% for the economics to work." <strong>So the base case sits three points below the line the company itself gave the government.</strong> The CFO's "slightly better than breakeven" at 17% is consistent with that — it just means the base case is a breakeven case, not an economic one.</div>
+      <div class="ask-b" style="margin-top:0.6rem;">That reframes the export ban. It is not upside on a working model; <strong>it is the mechanism that closes a gap present in the base case.</strong> Which is why it is worth 25 IRR points, and why its absence matters more than a missed tailwind. Meanwhile every point of input payable eats the spread one-for-one, and at +1% output payable = $1.5M EBITDA, a five-point move in payables is <strong>~$7.5M — roughly 20% of South Carolina's $38M EBITDA.</strong></div>
+      <div class="ask-q">Is 17% the base case, or is 20% the base case and 17% the stress case? And what is the actual EXW USA payable being paid at Ohio today?</div>
+    </div>
+
+    <div class="ask">
+      <div class="ask-h">What are we missing — lithium is the widest-spread line and it's exposed twice</div>
+      <div class="ask-b">Lithium is bought at <strong>0% payable and sold at 100%</strong>, and it is <strong>42% of unit revenue</strong> ($16.4 of $39.3/kg). It is the most profitable line in the book precisely because none of its value is paid for on the way in — which means it is also the line most exposed to a price fall, since there is no input cost that falls with it. It is simultaneously <strong>the one process step never demonstrated at Ohio.</strong></div>
+      <div class="ask-b" style="margin-top:0.6rem;">Those are filed as two separate risks. They are one risk on one line, and the +280kt LCE supply wave now points at it. If lithium retraces toward the $12k assumption, roughly 42% of unit revenue reprices with zero offsetting relief on feedstock cost.</div>
+      <div class="ask-q">Does FEL2 give us lithium recovery data, and does the model hold if lithium goes back to the "very conservative" $12k it was underwritten at?</div>
+    </div>
+
+    <div class="co-sub">Change log</div>
+
+    <div class="chg" style="border-top:none;">
+      <div><div class="chg-topic">Europe two-tier<br>market</div><div class="chg-move">new · structural</div></div>
+      <div class="chg-body">
+        China's import standard — min 25% combined Ni+Co, min 3.5% Li, max 0.4% water-soluble fluoride — has bifurcated the global market. Compliant production scrap clears above 100% payable. <strong>Off-spec and EOL material, particularly European, is structurally discounted because EU hazardous-waste rules trap it.</strong>
+        <div class="trk"><b>Two things follow</b><br>First, Rotterdam is the live proof of what the US EO would do, and it implies the NL spread is already wider than SC's. Second, the ability to run low-quality feedstock — Tesla reportedly called the MHP the highest purity seen from low-quality black mass inputs — is not just a technical claim, <strong>it is permission to buy in the discounted tier while everyone else bids for the compliant tier at 100%+.</strong> That is a commercial moat the deck does not currently sell. <b style="display:block;margin-top:5px;">Tracked</b>Fastmarkets MB-BMS EXW Europe vs EXW USA payable indicators, weekly, once we have access.</div>
+        <div class="signal s-opp">Underpriced in the story</div>
+      </div>
+    </div>
+
+    <div class="chg">
+      <div><div class="chg-topic">Export ban</div><div class="chg-move">absent · 12 wks on</div></div>
+      <div class="chg-body">
+        Nothing filed. The summer-session window has largely closed. <strong>Carrying 71% as "most likely" for South Carolina is no longer defensible; the honest read is the 46% levered case.</strong> Layer the nickel gap on top — at −3.2 IRR points per 10% metals move, a ~33% miss on 74% of value is roughly <strong>7 points of drag on the 26% unlevered base</strong>, call it high teens — and both the headline and the fallback have moved.
+        <div class="trk"><b>The lever that is actually live</b><br>The Jan 14 Section 232 proclamation on processed critical mineral imports directed Commerce and USTR to report within 180 days — <strong>due July 13</strong> — and explicitly contemplates minimum import prices. That is a price floor on refined product, which is the Critical Minerals Security Act idea arriving through a different agency. <b style="display:block;margin-top:5px;">Tracked</b>Federal Register BIS docket; White House presidential actions; USTR statements on the 232 negotiations. Alert on any 232 outcome or price-floor mechanism.</div>
+        <div class="signal s-risk">Base case must be reset</div>
+      </div>
+    </div>
+
+    <div class="chg">
+      <div><div class="chg-topic">Ionic Rare<br>Earths</div><div class="chg-move">milestone met · partner thin</div></div>
+      <div class="chg-body">
+        <strong>Belfast integration is scheduled to begin Q4 2026</strong>, with OYSTER replacing oxalic-acid precipitation and regenerating HCl for closed-loop reuse — the mid-May definitive JDA substantially landed. The new information is the counterparty: Ionic RE is at <strong>~A$71M market cap, down ~28% in 2026</strong>, holding a £12M UK grant offer, with its capital raise described as management's primary unresolved challenge.
+        <div class="trk"><b>Read</b><br>"REE platform ready for commercial deployment" is a Series C proof point and the technical path is real. The exposure is that the demonstration site belongs to a company that may not be able to fund it. Same pattern as Mkango — both are junior, both are pre-revenue, and the platform's proof depends on their balance sheets, not ours.</div>
+        <div class="signal s-watch">Counterparty risk, unnamed</div>
+      </div>
+    </div>
+
+    <div class="chg">
+      <div><div class="chg-topic">Trafigura</div><div class="chg-move">— unmoved · one exposure</div></div>
+      <div class="chg-body">
+        Contract intact. FID by 12/31/28 and COD (100t contained Ni in 90 days) by 12/31/29 both hold, with the April 2027 FID in the project graphic sitting 20 months inside the deadline — real cushion that is not being counted as a strength anywhere.
+        <div class="trk"><b>The exposure nobody has named</b><br>Trafigura is the anchor offtaker at ~2/3 of initial capacity and ~$100M of ~$150M 2029 revenue, <em>and</em> the largest black mass supplier at 12,000 t/yr — <strong>57% of executed feedstock.</strong> One counterparty is setting both the input payable and the output payable in a business that is, by the company's own description, a spread business. The risk register covers the offtake concentration only. <b style="display:block;margin-top:5px;">Question</b>What stops Trafigura from optimising the spread in its own favour at renewal, given it can see both sides?</div>
+        <div class="signal s-watch">Structural, not urgent</div>
+      </div>
+    </div>
+
+    <div class="co-sub">Series C proof points — live status</div>
+    <div class="pp">
+      <div class="pp-row"><div class="pp-t"><b>Equity raise &gt;$50M.</b> Target close was June. No announcement; PitchBook still shows ~$65.6M total raised, consistent with no new round. Size was stated four ways across the note ($53.5M build-up, $75M assumed, $75–100M+, $50–200M).</div><div class="pp-s pp-unk">unknown</div></div>
+      <div class="pp-row"><div class="pp-t"><b>24 months' runway.</b> Contingent on the above. On $8M cash and $15M/yr burn at end-April, straight-lining puts cash near $4M today absent the $15M note.</div><div class="pp-s pp-miss">at risk</div></div>
+      <div class="pp-row"><div class="pp-t"><b>FID at 2 Ni-Co-Li projects.</b> Project graphic has FID April 2027 — not yet due, and comfortably inside Trafigura's 12/31/28 condition. FEL2 for the MHP flowsheet was due Q2 2026 and should now be complete.</div><div class="pp-s pp-part">on track</div></div>
+      <div class="pp-row"><div class="pp-t"><b>Rare earth and copper platforms ready for commercial deployment.</b> REE: Ionic Belfast integration scheduled Q4 2026 — but see the counterparty note. Copper: commercial-scale cell testing due Q2 2027; the Rio Tinto slag MTA signed September 2025 runs 12 months from samples, so it should be reporting around now. Copper price clears the underwriting.</div><div class="pp-s pp-part">partial</div></div>
+      <div class="pp-row"><div class="pp-t"><b>Elimination of debt.</b> $10M HSBC term debt, fully drawn. No change visible.</div><div class="pp-s pp-unk">unknown</div></div>
+      <div class="pp-row"><div class="pp-t"><b>Uptime to 92%.</b> Campaign 4 closed in January at 49%, average 60% against a 90% target. <strong>A Campaign 5 almost certainly exists and we do not have it.</strong> This is the single most-cited operating number in the file and it is six months stale — and it is the largest IRR driver at −6.7 points per 10% miss.</div><div class="pp-s pp-unk">stale</div></div>
+    </div>
 
     <div class="wl">
-      <div class="wl-row"><div class="wl-k">Customers</div><div class="wl-v"><span class="pill">Trafigura — 10-yr, $1.1B offtake</span></div></div>
-      <div class="wl-row"><div class="wl-k">Competitors</div><div class="wl-v"><span class="pill">Li-Cycle (bankrupt 2025 → Glencore)</span><span class="pill">Redwood Materials</span><span class="pill">Cirba Solutions</span><span class="pill">Ascend Elements</span></div></div>
-      <div class="wl-row"><div class="wl-k">Projects</div><div class="wl-v"><span class="pill">Fairfield, OH (operating)</span><span class="pill">South Carolina · Project SHIELD (2028)</span><span class="pill">Netherlands (2028)</span></div></div>
-      <div class="wl-row"><div class="wl-k">Policy</div><div class="wl-v"><span class="pill">US black-mass export rules</span><span class="pill">FEOC / NDAA recycled-material provisions</span></div></div>
-      <div class="wl-note">Competitor and customer lists are drawn from public sources and should be reconciled against the Nth Cycle investment memo once the NDA is in place.</div>
+      <div class="wl-row"><div class="wl-k">Tracking</div><div class="wl-v"><span class="pill">Payability spread vs 17% / 20%</span><span class="pill">Ni vs $25k/t</span><span class="pill">Co vs $48k/t</span><span class="pill">Li vs $12k/t</span><span class="pill">Black mass vs $19/kg</span><span class="pill">Cu vs $13/kg</span><span class="pill">Uptime vs 90%</span><span class="pill">Throughput vs 550 g/cell/hr</span><span class="pill">§232 report / price floor</span><span class="pill">Federal Register (BIS)</span></div></div>
+      <div class="wl-row"><div class="wl-k">Overdue</div><div class="wl-v"><span class="pill">Series C close (Jun)</span><span class="pill">SPAC vs C decision (mid-26)</span><span class="pill">$100M DOE notice (Jul)</span><span class="pill">Mkango definitive JDA (mid-May)</span><span class="pill">WMC definitive (Q2)</span></div></div>
+      <div class="wl-note">Redwood / Li-Cycle / Ascend are deliberately absent. They are filed under Competitive Landscape in one memo, described as upstream shredders whose retreat hurts Nth Cycle's feedstock in the same document's Q&amp;A, and treated as prospective customers in the 2021 memo. Three categorisations. Worth settling, because it changes whether their collapse is good news or bad.</div>
     </div>
   </div>
 
-  <!-- AEPNUS -->
+  <!-- ===== AEPNUS ===== -->
+  <p class="sl">Aepnus Technology</p>
   <div class="company">
     <div class="co-head">
       <div class="co-name">Aepnus Technology</div>
-      <div class="co-desc">Reagent recycling from sulfate waste · pre-commercial</div>
+      <div class="co-desc">$1M total · 3.9% → 2.06% FD · $45M post</div>
     </div>
 
-    <div class="co-sub">This week's read</div>
-    <p class="co-p">The relevant move for Aepnus isn't a price — it's the Nemaska/Bécancour slowdown. Nemaska is one of three named feedstock partners for the Bécancour pilot, so Rio Tinto slowing construction and cutting contractor headcount there introduces some risk to the pilot's cadence. The diligence question worth running down: does the pilot's sodium-sulfate supply depend on Nemaska's plant being operational, or on its construction-phase and partner streams? Vale and Ultium CAM remain as the other two partners, which diversifies the feedstock risk.</p>
-    <div class="caveat"><strong>Caveat:</strong> Aepnus is private and pre-commercial, so this read-through is more inferential than Nth Cycle's. The Nemaska partnership is real and named, but the pilot's exact dependency on Nemaska's plant status isn't public — flagged as a question to confirm, not an established risk.</div>
+    <div class="co-read">
+      <strong>Read:</strong> quiet quarter, and quiet is fine here — nothing in the metals complex reaches a business whose economics are a caustic soda spread. Rio Tinto has said nothing since March 13. The one genuinely new thing is a correction in Aepnus's favour on how much of the story Nemaska actually carries.
+    </div>
 
-    <div class="co-sub">What the dashboard should track for them</div>
-    <p class="co-p">The signal that matters for Aepnus is <strong>North American refining and cathode capacity coming online, not the spot price of any metal</strong> — more lines running means more sodium-sulfate feedstock to address. The one price that does move the value proposition is caustic soda (and sulfuric acid): it sets how much a customer saves by regenerating reagents on-site versus buying virgin. Right now US caustic soda is soft on chlor-alkali oversupply, a mild headwind to that half of the savings — though for remote sites the disposal-avoidance and freight half, which this doesn't touch, is usually the larger piece.</p>
+    <div class="co-sub">Change log</div>
 
-    <div class="co-sub">Competitive context</div>
-    <p class="co-p">The real competition is the status quo it displaces — landfilling sulfate waste and buying virgin reagents from incumbent chlor-alkali producers (Olin, Westlake, Occidental, Dow). Direct analogs doing on-site electrochemical regeneration from sulfate waste are few, which is both the opportunity (little direct competition) and the risk (an unproven market, long industrial sales cycles, scale potentially years out). The question is less "who wins the category" than "does it materialize on a fundable timeline."</p>
+    <div class="chg" style="border-top:none;">
+      <div><div class="chg-topic">Nemaska</div><div class="chg-move">silent since Mar 13</div></div>
+      <div class="chg-body">
+        No update in four months. Construction was 60% complete at end-2025 with engineering finished; slowed through 2026 for optimisation; commissioning was planned 2026 and first production 2028. Rio has reaffirmed >$300M of 2026 Québec investment and Québec is subscribing up to $200M in equity, so the project is not in doubt — <strong>only its date is.</strong>
+        <div class="trk"><b>The correction that matters</b><br>The 2,000-hour Bécancour pilot ran on sodium sulfate from a <strong>nearby supplier, carrying significantly more impurities than the partners' own limits</strong> — not on Nemaska LHM byproduct. So Nemaska's slippage does not touch the technical record, and the impurity detail is itself a proof point for off-spec tolerance that is not being sold. <strong>What is exposed is the $36M/yr offtake and the 400tpa demo's role as the validation event that converts Nemaska and Sollio from LOI to firm.</strong> <b style="display:block;margin-top:5px;">Gap to put to Lukas</b>The LOI has Nemaska supplying sodium sulfate from LHM production in 2026 and a 15kta facility negotiated in 2026, commissioned 2027. Rio Tinto's own schedule has first production in 2028. Those do not reconcile from outside. <b style="display:block;margin-top:5px;">Tracked</b>Rio Tinto quarterly operations reviews and releases; Investissement Québec. Next quarterly is the trigger.</div>
+        <div class="signal s-risk">Timing, not thesis</div>
+      </div>
+    </div>
 
-    <div class="co-sub">What to watch</div>
-    <p class="co-p">North American refining and cathode capacity coming online (the demand driver); the Bécancour pilot's progress and whether the Nemaska slowdown touches it; caustic-soda and sulfuric-acid prices, currently soft; and above all any move from pilot toward the 500+ tonne-a-year demonstration plant, the real de-risking milestone.</p>
+    <div class="chg">
+      <div><div class="chg-topic">Caustic spread</div><div class="chg-move">— unmoved</div></div>
+      <div class="chg-body">
+        No movement against the $950/dry-tonne Bécancour anchor or the $214/tonne production cost. Independent corroboration of the siting logic: <strong>Canada imports ~600,000 t/yr of caustic, about 60% of demand, worth close to C$1B</strong> — the demand-side gap is real and is not an Aepnus estimate.
+        <div class="trk"><b>The sensitivity to watch is power, not caustic</b><br>Margins of 40–50% compress toward 20–30% if electricity rises, and Bécancour was chosen for $0.04/kWh. Quebec industrial power is a more meaningful tracker than the caustic price, which is stable. <b style="display:block;margin-top:5px;">Unreconciled</b>Production cost appears as $17/t (country chart), $214/t (Nemaska TEA), and &lt;$95/t (global claim). We track $214 because it is the one tied to a signed LOI. <b style="display:block;margin-top:5px;">Dropped</b>US Gulf Coast caustic. Wrong geography for this thesis.</div>
+        <div class="signal s-opp">Intact</div>
+      </div>
+    </div>
+
+    <div class="chg">
+      <div><div class="chg-topic">Lithium supply<br>wave</div><div class="chg-move">▼ second-order</div></div>
+      <div class="chg-body">
+        The only route by which the metals complex touches Aepnus, and it is indirect. Jianxiawo restart likely from September, Manono first exports this month, together potentially +280kt LCE. Feedstock here is a volume story, not a price story — sodium sulfate arrives because refineries run. But <strong>a softening lithium market is not the environment in which Rio Tinto accelerates a paused hydroxide plant.</strong> The lithium wave and the Nemaska delay are the same risk wearing two hats.
+        <div class="signal s-watch">Compounds the Nemaska timing</div>
+      </div>
+    </div>
+
+    <div class="co-sub">Series A proof points — live status</div>
+    <div class="pp">
+      <div class="pp-row"><div class="pp-t"><b>Deliver the 400tpa commercial demo (Q1 2027).</b> $10M capex, contemplated 70% government financed. $4.4M confirmed; the remainder was expected "this summer," which is now.</div><div class="pp-s pp-part">on track</div></div>
+      <div class="pp-row"><div class="pp-t"><b>Secure first binding offtakes.</b> None of the 50+ engagements has converted. The two that matter — Nemaska $36M/yr, Sollio $40M/yr — are gated on the demo, which is gated on 2027. Nothing should have moved yet.</div><div class="pp-s pp-unk">not yet due</div></div>
+      <div class="pp-row"><div class="pp-t"><b>Credible path to financing the scale-up.</b> $15M at $30M pre led by AP Ventures, targeting a $10M first close by <strong>end of May</strong>. No public close. This is the one that should have landed.</div><div class="pp-s pp-unk">unknown</div></div>
+      <div class="pp-row"><div class="pp-t"><b>Bécancour concentration.</b> Unchanged, and the Nemaska slowdown is exactly the scenario "all eggs in one basket" anticipated. Sollio, Umicore Finland (~$60M, gated on a permit requiring 95% sulfate recycling) and Koyuncu remain the hedges — all still LOI or JDA.</div><div class="pp-s pp-part">as expected</div></div>
+    </div>
 
     <div class="wl">
-      <div class="wl-row"><div class="wl-k">Partners</div><div class="wl-v"><span class="pill">Ultium CAM (GM × POSCO)</span><span class="pill">Vale</span><span class="pill">Nemaska Lithium (Rio Tinto)</span></div></div>
-      <div class="wl-row"><div class="wl-k">Displaces</div><div class="wl-v"><span class="pill">Olin</span><span class="pill">Westlake</span><span class="pill">Occidental</span><span class="pill">virgin chlor-alkali + landfill</span></div></div>
-      <div class="wl-row"><div class="wl-k">Projects</div><div class="wl-v"><span class="pill">Oakland testbed</span><span class="pill">Bécancour pilot</span><span class="pill">500+ t/yr demo plant</span></div></div>
-      <div class="wl-note">From public sources; the competitor set in particular is thin in public data and should be confirmed against the Aepnus memo.</div>
+      <div class="wl-row"><div class="wl-k">Tracking</div><div class="wl-v"><span class="pill">Caustic (Canada) vs $950/t</span><span class="pill">Sulfuric vs $180/t</span><span class="pill">Ammonium sulfate vs $333/t</span><span class="pill">Quebec power vs $0.04/kWh</span><span class="pill">NA refining capacity online</span></div></div>
+      <div class="wl-row"><div class="wl-k">Overdue</div><div class="wl-v"><span class="pill">Series A first close ($10M, end-May)</span><span class="pill">Demo grant balance ("this summer")</span></div></div>
+      <div class="wl-note">Northvolt is the largest unweighted line in the 2024 pipeline (~$253M, early discussions) and Rio Tinto Jadar sits at $109M. Both warrant a status check before this circulates.</div>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ============ REGULATORY / NEWS ============ -->
-  <p class="sl">Regulatory &amp; Supply Chain Developments <span class="sl-sub">US focus · catalysts flagged for alerts</span></p>
-  <div class="ng">
-    <div class="nc cat">
-      <div class="nc-src"><span>Rio Tinto · Mar 13, 2026</span><span class="ntag ntag-metal">Catalyst</span></div>
-      <div class="nc-t">Rio Tinto Slows Nemaska's Bécancour Hydroxide Plant for "Optimization"</div>
-      <div class="nc-b">After taking 53.9% majority control of Nemaska (via the Arcadium acquisition) and assuming management in February, Rio Tinto announced it would slow Bécancour construction through 2026 and temporarily reduce contractor headcount, despite the plant being over 70% built. It reaffirmed commitment and a $300M+ 2026 Quebec investment; commissioning was previously planned for 2026 with first production in 2028.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> Nemaska is a named feedstock partner for Aepnus's co-located Bécancour pilot, so this is the quarter's most direct portfolio read-through — a timing risk to confirm, partly cushioned by Vale and Ultium CAM as alternate partners. <span class="ping">ping if status changes</span></div>
-    </div>
-
-    <div class="nc cat">
-      <div class="nc-src"><span>Policy · ongoing</span><span class="ntag ntag-risk">Catalyst</span></div>
-      <div class="nc-t">US Black-Mass Export Restrictions: Discussed, Not Enacted</div>
-      <div class="nc-b">The US still treats black mass as non-hazardous and remains a net exporter; market participants broadly do not expect a near-term ban. The EU is moving to restrict black-mass exports from late 2026, and China (≈75% of global black-mass processing) reopened imports in 2025 — so feedstock is being pulled toward Asia while US domestic refining capacity lags.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> The single highest-leverage potential catalyst for Nth Cycle — a ban would keep recycled feedstock onshore — but it is not policy today and should be tracked, not assumed. <span class="ping">ping if status changes</span></div>
-    </div>
-
-    <div class="nc">
-      <div class="nc-src"><span>Industry · 2025–26</span><span class="ntag ntag-risk">Competition</span></div>
-      <div class="nc-t">Recycling Shakeout: Li-Cycle Bankrupt, Redwood Thriving</div>
-      <div class="nc-b">Li-Cycle's capital-intensive centralized hub model collapsed into bankruptcy in 2025 (Glencore bought the assets for ~$40M); Redwood Materials, by contrast, raised over $2B privately and declined its DOE loan. The category is bifurcating between distressed and well-funded players.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> A real-world validation of Nth Cycle's modular, low-capex thesis — and a reminder that the strongest competitor (Redwood) is healthy, so the bet is on execution and capital discipline, not a clear field.</div>
-    </div>
-
-    <div class="nc">
-      <div class="nc-src"><span>US Policy · FY2026</span><span class="ntag ntag-policy">Near-shoring</span></div>
-      <div class="nc-t">NDAA and FEOC Rules Keep Tightening the Domestic Floor</div>
-      <div class="nc-b">The FY2026 NDAA expanded covered materials and added explicit recycled-material exceptions, while FEOC rules continue to steer sourcing away from Chinese supply chains. The policy direction consistently rewards domestic refining and recycling.</div>
-      <div class="nc-analysis"><strong>Why it matters:</strong> A slow-moving structural tailwind under both portfolio companies' core thesis — onshore processing of critical materials — independent of where spot prices sit this month.</div>
-    </div>
+  <!-- ===== GAPS ===== -->
+  <p class="sl">Gaps, and What Would Close Them <span class="sl-sub">what this dashboard cannot see yet</span></p>
+  <div class="tk">
+    <p style="margin-bottom:0.7rem;"><strong>1. The payability spread. This is the whole game and we are blind to it.</strong> Production/uptime and feedstock payables are the two largest IRR drivers — 6.7 and 4.7 points per 10% move, against 3.2 for metals price. Everything above the fold on most minerals dashboards is the third most important variable. The fix is specific: <strong>Fastmarkets MB-BMS EXW USA and EXW Europe black mass payable indicators.</strong> That single subscription line is the difference between reporting prices and reporting the business.</p>
+    <p style="margin-bottom:0.7rem;"><strong>2. Ohio Campaign 5.</strong> The 60% uptime figure anchors the largest sensitivity in the model and is six months old. This is not a market datapoint — it comes from the company. A standing monthly ask for campaign uptime, throughput and recovery would make the highest-leverage variable trackable rather than annual.</p>
+    <p style="margin-bottom:0.7rem;"><strong>3. Quebec industrial power.</strong> The only real sensitivity in the Aepnus model and we are not tracking it. Hydro-Québec large-power tariffs are public.</p>
+    <p style="margin-bottom:0.7rem;"><strong>4. Two categorisation questions that change the analysis.</strong> Whether Redwood/Li-Cycle/Ascend are competitors, suppliers or customers determines whether the recycling shakeout is good news or bad. And whether 17% or 20% is the base-case spread determines whether the export ban is upside or a requirement. Both are one-line answers from the team.</p>
+    <p style="margin:0;"><strong>5. Where this goes next.</strong> The proof-point tracker above is the templating pattern — every memo has one, and it converts a static document into a live checklist. The same shape works for any portfolio company: thresholds from the memo, status from research, gap in between. Once Fastmarkets is in and the payability spread is visible, the natural next build is the whitespace view: copper is structurally short, MUUS has no direct exposure, and Nth Cycle is already walking into it with a Rio Tinto slag MTA and a &lt;2-year payback that clears at today's price.</p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ============ REGIONAL (DEMOTED) ============ -->
-  <p class="sl quiet">Regional Context <span class="sl-sub">US vs. China · updated quarterly · reference only</span></p>
-  <div class="tw quiet">
+  <!-- ===== MACRO ===== -->
+  <p class="sl">Macro <span class="sl-sub">reference · the third most important variable</span></p>
+  <div class="tw">
   <table>
-    <thead><tr><th style="width:118px;">Region</th><th>Position</th><th>Relevance to portfolio</th></tr></thead>
+    <thead><tr><th style="width:92px;">Metal</th><th>Level</th><th>Move</th><th>Driver</th></tr></thead>
     <tbody>
-      <tr>
-        <td><span class="region-label reg-na">United States</span></td>
-        <td><div class="dep-high">Refining-capacity short</div><div class="reg-note">Abundant scrap and ore but limited domestic refining; a net black-mass exporter. Near-shoring policy and funding are building the floor but remain years from meaningful scale.</div></td>
-        <td><div class="reg-note">The exact gap both portfolio companies are built to fill — Nth Cycle in refining, Aepnus in reagent regeneration.</div></td>
-      </tr>
-      <tr>
-        <td><span class="region-label reg-china">China</span></td>
-        <td><div class="dep-low">Processing chokepoint</div><div class="reg-note">Refines &gt;85% of critical minerals and ≈75% of black mass; reopened black-mass imports in 2025 to pull in global feedstock.</div></td>
-        <td><div class="reg-note">The incumbent the domestic thesis is positioned against; the feedstock pull a US export ban would aim to counter.</div></td>
-      </tr>
+      <tr><td><div class="mn">Nickel</div><div class="ms">LME</div></td><td class="num">$16,796/t</td><td><span class="badge bd">−6.5% / mo</span></td><td>Indonesia preparing to lift 2026 RKAB quotas to ~360Mt from 260Mt; LME and SHFE inventories elevated.</td></tr>
+      <tr><td><div class="mn">Cobalt</div><div class="ms">FM std grade low</div></td><td class="num">$25.50/lb</td><td><span class="badge bn">−$0.20 / wk</span></td><td>DRC cap 96,600t/yr through 2027; unused H1 quota forfeited to the strategic reserve as of 29 June. Chinese import/export windows closed.</td></tr>
+      <tr><td><div class="mn">Lithium</div><div class="ms">carbonate</div></td><td class="num">~$21,000/t</td><td><span class="badge bn">off May high</span></td><td>Chinese LFP output +2.87% in June, +4.68% projected July. Supply: Jianxiawo permitted for restart, Manono exporting.</td></tr>
+      <tr><td><div class="mn">Copper</div><div class="ms">COMEX</div></td><td class="num">$6.05/lb</td><td><span class="badge bd">off record</span></td><td>Off a ~$6.60 record on 2 June on dollar and Fed. Structural deficit into the 2030s unchanged.</td></tr>
     </tbody>
   </table>
   </div>
 
+  <div class="divider"></div>
+
+  <!-- ===== SOURCES ===== -->
+  <p class="sl">Sources</p>
+  <div class="ng">
+    <div class="nc">
+      <div class="nc-src"><span>Fastmarkets · 2026</span><span>payables</span></div>
+      <div class="nc-t"><a href="https://www.fastmarkets.com/metals-and-mining/battery-raw-materials/brm-monthly-market-update-2026/" target="_blank" rel="noopener">BRM monthly update — record payables, two-tier market</a></div>
+      <div class="nc-b">87.5% NCM CIF South Korea on 7 Jan, an all-time high; first assessment above 100% for compliant high-purity powder; EOL material from Europe weak on hazardous-waste export restrictions.</div>
+    </div>
+    <div class="nc">
+      <div class="nc-src"><span>Trading Economics · Jul 15</span><span>nickel</span></div>
+      <div class="nc-t"><a href="https://tradingeconomics.com/commodity/nickel" target="_blank" rel="noopener">Nickel $16,796/t as Indonesia prepares quota reversal</a></div>
+      <div class="nc-b">RKABs to 360Mt from 260Mt, reversing the H1 tightening. June −14%.</div>
+    </div>
+    <div class="nc">
+      <div class="nc-src"><span>White House · Jan 14</span><span>policy</span></div>
+      <div class="nc-t"><a href="https://www.whitehouse.gov/presidential-actions/2026/01/adjusting-imports-of-processed-critical-minerals-and-their-derivative-products-into-the-united-states/" target="_blank" rel="noopener">Section 232 — processed critical mineral imports</a></div>
+      <div class="nc-b">Tariffs reserved not imposed; minimum import prices contemplated; negotiation report due within 180 days, i.e. 13 July 2026.</div>
+    </div>
+    <div class="nc">
+      <div class="nc-src"><span>CME · Jul 3</span><span>cobalt · lithium</span></div>
+      <div class="nc-t"><a href="https://www.cmegroup.com/newsletters/battery-metals-report/files/260703-battery-metals-market-update.pdf" target="_blank" rel="noopener">Battery Metals Market Update</a></div>
+      <div class="nc-b">Fastmarkets std grade cobalt low $25.50/lb; ARECOMS 29 June forfeiture; Jianxiawo permits cleared; Manono first exports July; +280kt LCE potential.</div>
+    </div>
+    <div class="nc">
+      <div class="nc-src"><span>Rio Tinto · Mar 13</span><span>Aepnus</span></div>
+      <div class="nc-t"><a href="https://www.riotinto.com/en/news/releases/2026/update-on-the-nemaska-lithium-bcancour-project" target="_blank" rel="noopener">Nemaska Bécancour slowed for optimisation</a></div>
+      <div class="nc-b">Construction slowed through 2026, contractor workforce reduced, commitment and &gt;$300M 2026 Québec investment reaffirmed. Nothing since.</div>
+    </div>
+    <div class="nc">
+      <div class="nc-src"><span>Aepnus</span><span>Aepnus</span></div>
+      <div class="nc-t"><a href="https://www.aepnus.com/post/aepnus-achieves-milestone-at-canadian-waste-to-critical-chemicals-facility-to-support-material-supply-chains-across-north-america" target="_blank" rel="noopener">2,000 hours at Bécancour, on off-spec feedstock</a></div>
+      <div class="nc-b">Run by a CNETE team without Aepnus intervention, on a nearby supplier's sodium sulfate carrying more impurities than partner limits. Canada imports ~600kt/yr caustic, ~C$1B.</div>
+    </div>
+  </div>
+
   <div class="src">
-    <strong>Sources &amp; method.</strong> Prices: Trading Economics / LME / COMEX spot snapshots, week of June 22–25, 2026 (copper ~$6.05/lb; lithium carbonate China ~CNY 152–169k/t; nickel ~$17,200/t). Company facts: Nth Cycle and Aepnus press and public materials, PR Newswire / Mining.com (Trafigura offtake, Mar 2026), Recycling Today / Latitude Media (Aepnus seed, 2024), Clean Energy Ventures, Lowercarbon. Catalysts: Rio Tinto release (Mar 13, 2026) on the Bécancour slowdown; Fastmarkets and trade press on black-mass policy; Glencore / Li-Cycle bankruptcy filings and ESG Dive / Waste Dive (2025). Policy: FY2026 NDAA summaries; FEOC guidance.<br>
-    <strong>What could be wrong.</strong> Spot prices are point-in-time and move daily — the June pullback may reverse or deepen. The black-mass export ban is <strong>not enacted</strong>; do not treat it as a base case. The Nemaska timeline is genuinely uncertain after Rio Tinto's slowdown. Specialty lithium and black-mass prices from free sources are approximate; precision needs Fastmarkets or Bloomberg. Company-level reads are inferred from public information and will be reconciled against the MUUS investment memos once the NDA is in place. Aepnus is pre-commercial, so its analysis is more inferential than Nth Cycle's.<br>
-    <strong>Housekeeping.</strong> This prototype is on a public link; move to private hosting or delivery before any NDA-covered memo content is added. Compiled June 26, 2026 for internal use at MUUS &amp; Company.
+    <strong>Method.</strong> Thresholds from the MUUS memos; everything measured against them researched as of 15 July 2026. Prices: LME / Trading Economics (nickel, 15 Jul); Fastmarkets standard-grade cobalt low via CME (3 Jul); lithium carbonate Northeast Asia (June); COMEX copper (late June). Policy: Federal Register, White House presidential actions, White &amp; Case and CSIS on the Jan 14 proclamation. Company: Rio Tinto, Aepnus, Nth Cycle, PitchBook, Discovery Alert.<br>
+    <strong>What could be wrong.</strong> The payability figures cited are Asian CIF and China DDP, <strong>not the EXW USA / EXW Europe indicators Nth Cycle transacts against</strong> — the direction is reliable, the magnitude is not. The Europe-as-experiment read is an inference from market commentary, not a measured spread differential. Model assumptions do not state delivery basis and the 74/14/12 split is unlabelled, so all gap percentages are directional. The IRR drag figure is our arithmetic. Absence of a funding announcement is not evidence a round failed. The export ban is <strong>not enacted</strong>. Redwood/Li-Cycle/Ascend remain categorised three ways across MUUS's own memos and are deliberately unresolved here.<br>
+    <strong>Housekeeping.</strong> Hosting must move off the public link before this circulates. Compiled 15 July 2026 for internal use at MUUS &amp; Company.
   </div>
 
 </div>
 
 <script>
-(function() {
-  function draw() {
-    var canvas = document.getElementById('priceChart');
-    var wrap = document.getElementById('chartWrap');
-    if (!canvas || !wrap) { setTimeout(draw, 100); return; }
-    var isMobile = window.innerWidth < 640;
-    var W = wrap.offsetWidth || 860;
-    var H = isMobile ? 200 : 240;
-    canvas.width = W * (window.devicePixelRatio || 1);
-    canvas.height = H * (window.devicePixelRatio || 1);
-    canvas.style.width = W + 'px';
-    canvas.style.height = H + 'px';
-    wrap.style.height = H + 'px';
-    var ctx = canvas.getContext('2d');
-    ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+(function(){
+  var rows = [
+    { label:'Nickel',  sub:'$16,796 vs $25k',   pct:-32.8, color:'#993c1d' },
+    { label:'Copper',  sub:'$13.34 vs $13/kg',  pct:  2.6, color:'#1d9e75' },
+    { label:'Cobalt',  sub:'$56.2k vs $48k',    pct: 17.1, color:'#1d9e75' },
+    { label:'Lithium', sub:'$21k vs $12k',      pct: 78.3, color:'#1d9e75' }
+  ];
+  function draw(){
+    var cv = document.getElementById('chartA');
+    if(!cv || !cv.parentNode.offsetWidth){ setTimeout(draw,120); return; }
+    var W = cv.parentNode.offsetWidth, H = cv.parentNode.offsetHeight;
+    var dpr = window.devicePixelRatio || 1;
+    cv.width = W*dpr; cv.height = H*dpr; cv.style.width=W+'px'; cv.style.height=H+'px';
+    var ctx = cv.getContext('2d'); ctx.scale(dpr,dpr); ctx.clearRect(0,0,W,H);
 
-    var pad = { top: 20, right: 20, bottom: 40, left: 44 };
-    var cw = W - pad.left - pad.right;
-    var ch = H - pad.top - pad.bottom;
+    var padL = 104, padR = 18, padT = 18, padB = 24;
+    var cw = W - padL - padR, ch = H - padT - padB;
+    var maxAbs = 90;
+    var zero = padL + cw/2;
+    function X(p){ return zero + (p/maxAbs) * (cw/2); }
+    var rowH = ch / rows.length;
 
-    var labels = ['Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26','Jun 26'];
-    var datasets = [
-      { label:'Copper',  data:[100,103,104,107,110,116,110], color:'#1d9e75', dash:[] },
-      { label:'Lithium', data:[100,112,124,134,142,156,130], color:'#378add', dash:[5,3] },
-      { label:'Nickel',  data:[100,106,110,116,120,124,109], color:'#ba7517', dash:[2,2] }
-    ];
+    [-50,0,50].forEach(function(g){
+      ctx.strokeStyle = g===0 ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.06)';
+      ctx.lineWidth = g===0 ? 1.5 : 1;
+      ctx.beginPath(); ctx.moveTo(X(g),padT); ctx.lineTo(X(g),padT+ch); ctx.stroke();
+      ctx.fillStyle='#a8a8a2'; ctx.font='9px monospace'; ctx.textAlign='center';
+      ctx.fillText((g>0?'+':'')+g+'%', X(g), H-6);
+    });
+    ctx.fillStyle='#5a5a56'; ctx.font='500 9px monospace'; ctx.textAlign='center';
+    ctx.fillText('MODEL', zero, padT-5);
 
-    var allVals = datasets.reduce(function(a,d){ return a.concat(d.data); }, []);
-    var minY = Math.floor(Math.min.apply(null,allVals) / 10) * 10 - 5;
-    var maxY = Math.ceil(Math.max.apply(null,allVals) / 10) * 10 + 5;
-    var n = labels.length;
+    rows.forEach(function(r,i){
+      var cy = padT + rowH*i + rowH/2;
+      var bh = Math.min(18, rowH*0.46);
+      var x0 = X(0), x1 = X(r.pct);
+      ctx.fillStyle = r.color; ctx.globalAlpha = 0.85;
+      ctx.fillRect(Math.min(x0,x1), cy-bh/2, Math.abs(x1-x0), bh);
+      ctx.globalAlpha = 1;
 
-    function xPos(i) { return pad.left + (i / (n-1)) * cw; }
-    function yPos(v) { return pad.top + ch - ((v - minY) / (maxY - minY)) * ch; }
+      ctx.fillStyle='#1a1a18'; ctx.font='500 12px "DM Sans", sans-serif'; ctx.textAlign='right';
+      ctx.fillText(r.label, padL-10, cy-1);
+      ctx.fillStyle='#8a8a84'; ctx.font='9px monospace';
+      ctx.fillText(r.sub, padL-10, cy+11);
 
-    ctx.strokeStyle = 'rgba(0,0,0,0.06)';
-    ctx.lineWidth = 1;
-    var ySteps = 5;
-    for (var s = 0; s <= ySteps; s++) {
-      var yv = minY + (maxY - minY) * s / ySteps;
-      var y = yPos(yv);
-      ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cw, y); ctx.stroke();
-      ctx.fillStyle = '#8a8a84';
-      ctx.font = (isMobile ? '9' : '10') + 'px monospace';
-      ctx.textAlign = 'right';
-      ctx.fillText(Math.round(yv), pad.left - 6, y + 3);
-    }
-
-    ctx.fillStyle = '#8a8a84';
-    ctx.font = (isMobile ? '9' : '10') + 'px monospace';
-    ctx.textAlign = 'center';
-    for (var i = 0; i < n; i++) {
-      ctx.fillText(labels[i], xPos(i), H - pad.bottom + 16);
-    }
-
-    datasets.forEach(function(ds) {
-      ctx.beginPath();
-      ctx.strokeStyle = ds.color;
-      ctx.lineWidth = 2;
-      ctx.setLineDash(ds.dash);
-      ds.data.forEach(function(v, i) {
-        if (i === 0) ctx.moveTo(xPos(i), yPos(v));
-        else ctx.lineTo(xPos(i), yPos(v));
-      });
-      ctx.stroke();
-      ctx.setLineDash([]);
-      ds.data.forEach(function(v, i) {
-        ctx.beginPath();
-        ctx.arc(xPos(i), yPos(v), isMobile ? 2.5 : 3, 0, Math.PI * 2);
-        ctx.fillStyle = ds.color;
-        ctx.fill();
-      });
+      ctx.fillStyle=r.color; ctx.font='500 11px monospace';
+      ctx.textAlign = r.pct<0 ? 'right' : 'left';
+      ctx.fillText((r.pct>0?'+':'')+r.pct.toFixed(0)+'%', x1 + (r.pct<0?-6:6), cy+4);
     });
   }
-
-  if (document.readyState === 'complete') { setTimeout(draw, 60); }
-  else { window.addEventListener('load', function(){ setTimeout(draw, 60); }); }
+  if(document.readyState==='complete'){ setTimeout(draw,60); }
+  else { window.addEventListener('load', function(){ setTimeout(draw,60); }); }
+  var t; window.addEventListener('resize', function(){ clearTimeout(t); t=setTimeout(draw,150); });
 })();
 </script>
 </body>
